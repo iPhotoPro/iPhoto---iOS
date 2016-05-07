@@ -14,6 +14,15 @@
 		107F0F9E1CDD9F4F00D71814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107F0F9C1CDD9F4F00D71814 /* LaunchScreen.storyboard */; };
 		107F0FA91CDD9F5000D71814 /* iPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FA81CDD9F5000D71814 /* iPhotoTests.swift */; };
 		107F0FB41CDD9F5000D71814 /* iPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FB31CDD9F5000D71814 /* iPhotoUITests.swift */; };
+		107F0FCB1CDE26B100D71814 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC21CDE26B100D71814 /* CustomNavigationBar.swift */; };
+		107F0FCC1CDE26B100D71814 /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F0FC31CDE26B100D71814 /* CustomNavigationBar.xib */; };
+		107F0FCD1CDE26B100D71814 /* IOAssetPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC41CDE26B100D71814 /* IOAssetPhoto.swift */; };
+		107F0FCE1CDE26B100D71814 /* IOAssetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC51CDE26B100D71814 /* IOAssetPhotoCell.swift */; };
+		107F0FCF1CDE26B100D71814 /* IOAssetPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC61CDE26B100D71814 /* IOAssetPhotoViewController.swift */; };
+		107F0FD01CDE26B100D71814 /* IOMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC71CDE26B100D71814 /* IOMenuCell.swift */; };
+		107F0FD11CDE26B100D71814 /* IOMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F0FC81CDE26B100D71814 /* IOMenuCell.xib */; };
+		107F0FD21CDE26B100D71814 /* IOMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC91CDE26B100D71814 /* IOMenuViewController.swift */; };
+		107F0FD31CDE26B100D71814 /* IOMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F0FCA1CDE26B100D71814 /* IOMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,15 @@
 		107F0FAF1CDD9F5000D71814 /* iPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		107F0FB31CDD9F5000D71814 /* iPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhotoUITests.swift; sourceTree = "<group>"; };
 		107F0FB51CDD9F5000D71814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107F0FC21CDE26B100D71814 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		107F0FC31CDE26B100D71814 /* CustomNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
+		107F0FC41CDE26B100D71814 /* IOAssetPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhoto.swift; sourceTree = "<group>"; };
+		107F0FC51CDE26B100D71814 /* IOAssetPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhotoCell.swift; sourceTree = "<group>"; };
+		107F0FC61CDE26B100D71814 /* IOAssetPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhotoViewController.swift; sourceTree = "<group>"; };
+		107F0FC71CDE26B100D71814 /* IOMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMenuCell.swift; sourceTree = "<group>"; };
+		107F0FC81CDE26B100D71814 /* IOMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOMenuCell.xib; sourceTree = "<group>"; };
+		107F0FC91CDE26B100D71814 /* IOMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMenuViewController.swift; sourceTree = "<group>"; };
+		107F0FCA1CDE26B100D71814 /* IOMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,7 @@
 			children = (
 				107F0F931CDD9F4F00D71814 /* AppDelegate.swift */,
 				107F0F951CDD9F4F00D71814 /* ViewController.swift */,
+				107F0FC11CDE26B100D71814 /* IOAssetPhoto */,
 				107F0F971CDD9F4F00D71814 /* Main.storyboard */,
 				107F0F9A1CDD9F4F00D71814 /* Assets.xcassets */,
 				107F0F9C1CDD9F4F00D71814 /* LaunchScreen.storyboard */,
@@ -123,6 +142,22 @@
 				107F0FB51CDD9F5000D71814 /* Info.plist */,
 			);
 			path = iPhotoUITests;
+			sourceTree = "<group>";
+		};
+		107F0FC11CDE26B100D71814 /* IOAssetPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				107F0FC21CDE26B100D71814 /* CustomNavigationBar.swift */,
+				107F0FC31CDE26B100D71814 /* CustomNavigationBar.xib */,
+				107F0FC41CDE26B100D71814 /* IOAssetPhoto.swift */,
+				107F0FC51CDE26B100D71814 /* IOAssetPhotoCell.swift */,
+				107F0FC61CDE26B100D71814 /* IOAssetPhotoViewController.swift */,
+				107F0FC71CDE26B100D71814 /* IOMenuCell.swift */,
+				107F0FC81CDE26B100D71814 /* IOMenuCell.xib */,
+				107F0FC91CDE26B100D71814 /* IOMenuViewController.swift */,
+				107F0FCA1CDE26B100D71814 /* IOMenuViewController.xib */,
+			);
+			path = IOAssetPhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +267,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107F0FCC1CDE26B100D71814 /* CustomNavigationBar.xib in Resources */,
 				107F0F9E1CDD9F4F00D71814 /* LaunchScreen.storyboard in Resources */,
 				107F0F9B1CDD9F4F00D71814 /* Assets.xcassets in Resources */,
+				107F0FD31CDE26B100D71814 /* IOMenuViewController.xib in Resources */,
 				107F0F991CDD9F4F00D71814 /* Main.storyboard in Resources */,
+				107F0FD11CDE26B100D71814 /* IOMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107F0FD01CDE26B100D71814 /* IOMenuCell.swift in Sources */,
+				107F0FD21CDE26B100D71814 /* IOMenuViewController.swift in Sources */,
+				107F0FCF1CDE26B100D71814 /* IOAssetPhotoViewController.swift in Sources */,
+				107F0FCE1CDE26B100D71814 /* IOAssetPhotoCell.swift in Sources */,
+				107F0FCB1CDE26B100D71814 /* CustomNavigationBar.swift in Sources */,
 				107F0F961CDD9F4F00D71814 /* ViewController.swift in Sources */,
 				107F0F941CDD9F4F00D71814 /* AppDelegate.swift in Sources */,
+				107F0FCD1CDE26B100D71814 /* IOAssetPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iPhoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = framgia.iPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iPhoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = framgia.iPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -485,6 +531,7 @@
 				107F0FBA1CDD9F5000D71814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		107F0FBB1CDD9F5000D71814 /* Build configuration list for PBXNativeTarget "iPhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +540,7 @@
 				107F0FBD1CDD9F5000D71814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		107F0FBE1CDD9F5000D71814 /* Build configuration list for PBXNativeTarget "iPhotoUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +549,7 @@
 				107F0FC01CDD9F5000D71814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
