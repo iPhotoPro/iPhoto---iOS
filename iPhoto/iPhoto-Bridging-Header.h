@@ -7,3 +7,4 @@
 //
 
 #import <GPUImage/GPUImage.h>
+#import <DLPhotoPicker/DLPhotoPicker.h>
