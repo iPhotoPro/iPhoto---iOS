@@ -1,0 +1,6 @@
+framework module Pods_iPhoto {
+  umbrella header "Pods-iPhoto-umbrella.h"
+
+  export *
+  module * { export * }
+}

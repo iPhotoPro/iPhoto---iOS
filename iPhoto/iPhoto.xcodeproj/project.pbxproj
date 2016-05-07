@@ -23,6 +23,12 @@
 		107F0FD11CDE26B100D71814 /* IOMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F0FC81CDE26B100D71814 /* IOMenuCell.xib */; };
 		107F0FD21CDE26B100D71814 /* IOMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FC91CDE26B100D71814 /* IOMenuViewController.swift */; };
 		107F0FD31CDE26B100D71814 /* IOMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F0FCA1CDE26B100D71814 /* IOMenuViewController.xib */; };
+		107F0FD51CDE2D7A00D71814 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FD41CDE2D7A00D71814 /* CoreMedia.framework */; };
+		107F0FD71CDE2D8200D71814 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FD61CDE2D8200D71814 /* CoreVideo.framework */; };
+		107F0FD91CDE2D8B00D71814 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FD81CDE2D8B00D71814 /* OpenGLES.framework */; };
+		107F0FDB1CDE2D9500D71814 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FDA1CDE2D9500D71814 /* AVFoundation.framework */; };
+		107F0FDD1CDE2D9C00D71814 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FDC1CDE2D9C00D71814 /* QuartzCore.framework */; };
+		13574242B18AE1DCBCFD845E /* Pods_iPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,15 @@
 		107F0FC81CDE26B100D71814 /* IOMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOMenuCell.xib; sourceTree = "<group>"; };
 		107F0FC91CDE26B100D71814 /* IOMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMenuViewController.swift; sourceTree = "<group>"; };
 		107F0FCA1CDE26B100D71814 /* IOMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOMenuViewController.xib; sourceTree = "<group>"; };
+		107F0FD41CDE2D7A00D71814 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		107F0FD61CDE2D8200D71814 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		107F0FD81CDE2D8B00D71814 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		107F0FDA1CDE2D9500D71814 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		107F0FDC1CDE2D9C00D71814 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		107F0FE11CDE3BE600D71814 /* iPhoto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPhoto-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		1DDEC5867932DFD8A8B0B67B /* Pods-iPhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		313C92A46E4DC7582C521AFC /* Pods-iPhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto.release.xcconfig"; sourceTree = "<group>"; };
+		74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +87,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107F0FDD1CDE2D9C00D71814 /* QuartzCore.framework in Frameworks */,
+				107F0FDB1CDE2D9500D71814 /* AVFoundation.framework in Frameworks */,
+				107F0FD91CDE2D8B00D71814 /* OpenGLES.framework in Frameworks */,
+				107F0FD71CDE2D8200D71814 /* CoreVideo.framework in Frameworks */,
+				107F0FD51CDE2D7A00D71814 /* CoreMedia.framework in Frameworks */,
+				13574242B18AE1DCBCFD845E /* Pods_iPhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,10 +116,17 @@
 		107F0F871CDD9F4F00D71814 = {
 			isa = PBXGroup;
 			children = (
+				107F0FDC1CDE2D9C00D71814 /* QuartzCore.framework */,
+				107F0FDA1CDE2D9500D71814 /* AVFoundation.framework */,
+				107F0FD81CDE2D8B00D71814 /* OpenGLES.framework */,
+				107F0FD61CDE2D8200D71814 /* CoreVideo.framework */,
+				107F0FD41CDE2D7A00D71814 /* CoreMedia.framework */,
 				107F0F921CDD9F4F00D71814 /* iPhoto */,
 				107F0FA71CDD9F5000D71814 /* iPhotoTests */,
 				107F0FB21CDD9F5000D71814 /* iPhotoUITests */,
 				107F0F911CDD9F4F00D71814 /* Products */,
+				75AB4A19F35C529F67A4512C /* Pods */,
+				D52A5EE861F8E8D01C2427E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +150,7 @@
 				107F0F9A1CDD9F4F00D71814 /* Assets.xcassets */,
 				107F0F9C1CDD9F4F00D71814 /* LaunchScreen.storyboard */,
 				107F0F9F1CDD9F4F00D71814 /* Info.plist */,
+				107F0FE11CDE3BE600D71814 /* iPhoto-Bridging-Header.h */,
 			);
 			path = iPhoto;
 			sourceTree = "<group>";
@@ -160,6 +189,23 @@
 			path = IOAssetPhoto;
 			sourceTree = "<group>";
 		};
+		75AB4A19F35C529F67A4512C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DDEC5867932DFD8A8B0B67B /* Pods-iPhoto.debug.xcconfig */,
+				313C92A46E4DC7582C521AFC /* Pods-iPhoto.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D52A5EE861F8E8D01C2427E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 107F0FB81CDD9F5000D71814 /* Build configuration list for PBXNativeTarget "iPhoto" */;
 			buildPhases = (
+				E4E780BA37DE3C3FDFCC2714 /* Check Pods Manifest.lock */,
 				107F0F8C1CDD9F4F00D71814 /* Sources */,
 				107F0F8D1CDD9F4F00D71814 /* Frameworks */,
 				107F0F8E1CDD9F4F00D71814 /* Resources */,
+				6650AE59D3EE346F820F5D30 /* Embed Pods Frameworks */,
+				DF46D26238F951DC294AF074 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +340,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6650AE59D3EE346F820F5D30 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF46D26238F951DC294AF074 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4E780BA37DE3C3FDFCC2714 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		107F0F8C1CDD9F4F00D71814 /* Sources */ = {
@@ -444,6 +541,7 @@
 		};
 		107F0FB91CDD9F5000D71814 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DDEC5867932DFD8A8B0B67B /* Pods-iPhoto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iPhoto/Info.plist;
@@ -451,11 +549,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = framgia.iPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/iPhoto-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		107F0FBA1CDD9F5000D71814 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 313C92A46E4DC7582C521AFC /* Pods-iPhoto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iPhoto/Info.plist;
@@ -463,6 +563,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = framgia.iPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/iPhoto-Bridging-Header.h";
 			};
 			name = Release;
 		};
