@@ -11,8 +11,9 @@
 		101530711CDE6C5000C82413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1015306F1CDE6C5000C82413 /* Main.storyboard */; };
 		101530731CDE6C8200C82413 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101530721CDE6C8200C82413 /* Photo.storyboard */; };
 		101530751CDE6CA800C82413 /* StoryBoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101530741CDE6CA800C82413 /* StoryBoardManager.swift */; };
-		101530771CDE6DE000C82413 /* IOAsettPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101530761CDE6DE000C82413 /* IOAsettPhotoViewController.swift */; };
 		1015307A1CDE705900C82413 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101530791CDE705900C82413 /* HomeViewController.swift */; };
+		1018E4C01CDFA4EA008A869D /* IOAssetPhotoEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018E4BF1CDFA4EA008A869D /* IOAssetPhotoEmptyView.swift */; };
+		1018E4C21CDFA8D3008A869D /* IOAssetPhotoEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1018E4C11CDFA8D3008A869D /* IOAssetPhotoEmptyView.xib */; };
 		107F0F941CDD9F4F00D71814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0F931CDD9F4F00D71814 /* AppDelegate.swift */; };
 		107F0F9B1CDD9F4F00D71814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 107F0F9A1CDD9F4F00D71814 /* Assets.xcassets */; };
 		107F0FA91CDD9F5000D71814 /* iPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F0FA81CDD9F5000D71814 /* iPhotoTests.swift */; };
@@ -22,6 +23,12 @@
 		107F0FD91CDE2D8B00D71814 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FD81CDE2D8B00D71814 /* OpenGLES.framework */; };
 		107F0FDB1CDE2D9500D71814 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FDA1CDE2D9500D71814 /* AVFoundation.framework */; };
 		107F0FDD1CDE2D9C00D71814 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107F0FDC1CDE2D9C00D71814 /* QuartzCore.framework */; };
+		10AE404A1CDF183800009AB2 /* IOMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE40491CDF183800009AB2 /* IOMenuViewController.swift */; };
+		10AE404C1CDF189700009AB2 /* IOMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE404B1CDF189700009AB2 /* IOMenuNavigationController.swift */; };
+		10AE404E1CDF1D3000009AB2 /* IOAssetPhotoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE404D1CDF1D3000009AB2 /* IOAssetPhotoNavigationController.swift */; };
+		10AE40501CDF1D5300009AB2 /* IOAssetPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE404F1CDF1D5300009AB2 /* IOAssetPhotoViewController.swift */; };
+		10AE40571CDF28DB00009AB2 /* IOAssetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE40551CDF28DB00009AB2 /* IOAssetPhotoCell.swift */; };
+		10AE40581CDF28DB00009AB2 /* IOAssetPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AE40561CDF28DB00009AB2 /* IOAssetPhotoCell.xib */; };
 		13574242B18AE1DCBCFD845E /* Pods_iPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +54,9 @@
 		1015306F1CDE6C5000C82413 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		101530721CDE6C8200C82413 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		101530741CDE6CA800C82413 /* StoryBoardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardManager.swift; sourceTree = "<group>"; };
-		101530761CDE6DE000C82413 /* IOAsettPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAsettPhotoViewController.swift; sourceTree = "<group>"; };
 		101530791CDE705900C82413 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1018E4BF1CDFA4EA008A869D /* IOAssetPhotoEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhotoEmptyView.swift; sourceTree = "<group>"; };
+		1018E4C11CDFA8D3008A869D /* IOAssetPhotoEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOAssetPhotoEmptyView.xib; sourceTree = "<group>"; };
 		107F0F901CDD9F4F00D71814 /* iPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107F0F931CDD9F4F00D71814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107F0F9A1CDD9F4F00D71814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +73,12 @@
 		107F0FDA1CDE2D9500D71814 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		107F0FDC1CDE2D9C00D71814 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		107F0FE11CDE3BE600D71814 /* iPhoto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPhoto-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		10AE40491CDF183800009AB2 /* IOMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMenuViewController.swift; sourceTree = "<group>"; };
+		10AE404B1CDF189700009AB2 /* IOMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMenuNavigationController.swift; sourceTree = "<group>"; };
+		10AE404D1CDF1D3000009AB2 /* IOAssetPhotoNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhotoNavigationController.swift; sourceTree = "<group>"; };
+		10AE404F1CDF1D5300009AB2 /* IOAssetPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhotoViewController.swift; sourceTree = "<group>"; };
+		10AE40551CDF28DB00009AB2 /* IOAssetPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOAssetPhotoCell.swift; sourceTree = "<group>"; };
+		10AE40561CDF28DB00009AB2 /* IOAssetPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOAssetPhotoCell.xib; sourceTree = "<group>"; };
 		1DDEC5867932DFD8A8B0B67B /* Pods-iPhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto.debug.xcconfig"; sourceTree = "<group>"; };
 		313C92A46E4DC7582C521AFC /* Pods-iPhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto.release.xcconfig"; sourceTree = "<group>"; };
 		74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +196,14 @@
 		107F0FC11CDE26B100D71814 /* IOAssetPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				101530761CDE6DE000C82413 /* IOAsettPhotoViewController.swift */,
+				10AE404D1CDF1D3000009AB2 /* IOAssetPhotoNavigationController.swift */,
+				10AE404F1CDF1D5300009AB2 /* IOAssetPhotoViewController.swift */,
+				10AE40551CDF28DB00009AB2 /* IOAssetPhotoCell.swift */,
+				10AE40561CDF28DB00009AB2 /* IOAssetPhotoCell.xib */,
+				1018E4BF1CDFA4EA008A869D /* IOAssetPhotoEmptyView.swift */,
+				1018E4C11CDFA8D3008A869D /* IOAssetPhotoEmptyView.xib */,
+				10AE404B1CDF189700009AB2 /* IOMenuNavigationController.swift */,
+				10AE40491CDF183800009AB2 /* IOMenuViewController.swift */,
 			);
 			path = IOAssetPhoto;
 			sourceTree = "<group>";
@@ -314,6 +335,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1018E4C21CDFA8D3008A869D /* IOAssetPhotoEmptyView.xib in Resources */,
+				10AE40581CDF28DB00009AB2 /* IOAssetPhotoCell.xib in Resources */,
 				101530711CDE6C5000C82413 /* Main.storyboard in Resources */,
 				101530731CDE6C8200C82413 /* Photo.storyboard in Resources */,
 				101530701CDE6C5000C82413 /* LaunchScreen.storyboard in Resources */,
@@ -391,8 +414,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				107F0F941CDD9F4F00D71814 /* AppDelegate.swift in Sources */,
-				101530771CDE6DE000C82413 /* IOAsettPhotoViewController.swift in Sources */,
+				10AE40501CDF1D5300009AB2 /* IOAssetPhotoViewController.swift in Sources */,
 				101530751CDE6CA800C82413 /* StoryBoardManager.swift in Sources */,
+				1018E4C01CDFA4EA008A869D /* IOAssetPhotoEmptyView.swift in Sources */,
+				10AE40571CDF28DB00009AB2 /* IOAssetPhotoCell.swift in Sources */,
+				10AE404C1CDF189700009AB2 /* IOMenuNavigationController.swift in Sources */,
+				10AE404E1CDF1D3000009AB2 /* IOAssetPhotoNavigationController.swift in Sources */,
+				10AE404A1CDF183800009AB2 /* IOMenuViewController.swift in Sources */,
 				1015307A1CDE705900C82413 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
