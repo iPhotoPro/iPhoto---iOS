@@ -9,11 +9,20 @@
 import UIKit
 import DLPhotoPicker
 
+protocol IOAssetPhotoViewControllerDelegate: class {
+    func collectionViewDidSelectedPhotos(photoAssets: [DLPhotoAsset])
+}
+
 class IOAssetPhotoViewController: DLPhotoCollectionViewController {
     
     let kPhotoTopPadding: CGFloat = 7
     let kImageViewPadding: CGFloat = 2
     let kNumPhotoPerRow: Int = 3
+    
+    var limit: Int = 0
+    lazy private var selectedIndexPaths: [NSIndexPath] = [NSIndexPath]()
+    lazy private var selectedAssets: [DLPhotoAsset] = [DLPhotoAsset]()
+    weak var collectionDelegate: IOAssetPhotoViewControllerDelegate?
     
     var navigationTitle: String = "Camera Roll" {
         didSet {
@@ -65,7 +74,18 @@ class IOAssetPhotoViewController: DLPhotoCollectionViewController {
     }
     
     func didTouchUpInsideDismisButton(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            self.selectedAssets.removeAll(keepCapacity: false)
+            for indexPath in self.selectedIndexPaths {
+                if let item = self.assets[indexPath.row] as? DLPhotoAsset {
+                    self.selectedAssets.append(item)
+                }
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.collectionDelegate?.collectionViewDidSelectedPhotos(self.selectedAssets)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }
     }
     
     func didTouchUpInsideMenuButton(sender: UIBarButtonItem) {
@@ -118,23 +138,49 @@ extension IOAssetPhotoViewController {
         weak var weakSelf = self
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             if let currentAsset = weakSelf?.assets[indexPath.row] as? DLPhotoAsset {
+                cell.identifier = currentAsset.phAsset.localIdentifier
                 if let size = weakSelf?.computeImageViewSize() {
                     currentAsset.requestThumbnailImageWithSize(size) { (image: UIImage!, info: [NSObject : AnyObject]!) in
                         dispatch_async(dispatch_get_main_queue(), {
-                            if collectionView.indexPathsForVisibleItems().contains(indexPath) {
-                                cell.photoImageView.image = image
+                            if currentAsset.phAsset.localIdentifier == cell.identifier {
+                                if collectionView.indexPathsForVisibleItems().contains(indexPath) {
+                                    cell.photoImageView.image = image
+                                }
                             }
                         })
                     }
                 }
             }
         }
+        if self.selectedIndexPaths.contains(indexPath) {
+            cell.updateState(true)
+        } else {
+            cell.updateState(false)
+        }
         
         return cell
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        if selectedIndexPaths.count < limit {
+            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? IOAssetPhotoCell {
+                cell.updateState(true)
+            }
+            selectedIndexPaths.append(indexPath)
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? IOAssetPhotoCell {
+            if self.selectedIndexPaths.contains(indexPath) {
+                cell.updateState(false)
+                for (index, item) in selectedIndexPaths.enumerate() {
+                    if item.isEqual(indexPath) {
+                        selectedIndexPaths.removeAtIndex(index)
+                    }
+                }
+            }
+        }
     }
     
 }

@@ -19,6 +19,7 @@ class IOMenuViewController: DLPhotoTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerMenuCell()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,12 +56,23 @@ class IOMenuViewController: DLPhotoTableViewController {
 
 extension IOMenuViewController {
     
+    private func registerMenuCell() {
+        tableView.registerClass(
+            IOMenuCell.self,
+            forCellReuseIdentifier: IOMenuCell.identifier
+        )
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath) as! DLPhotoTableViewCell
-        cell.selectionStyle = .None
-        if let collection = photoCollections[indexPath.row] as? DLPhotoCollection {
-            cell.bind(collection, count: collection.count)
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(IOMenuCell.identifier, forIndexPath: indexPath) as! IOMenuCell
+        if let _ = tableView.indexPathsForVisibleRows?.contains(indexPath) {
+            cell.selectionStyle = .None
+            if let collection = self.photoCollections[indexPath.row] as? DLPhotoCollection {
+                cell.bind(collection, count: collection.count)
+            }
         }
+        
         return cell
     }
     

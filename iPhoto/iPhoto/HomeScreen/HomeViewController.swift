@@ -25,8 +25,20 @@ class HomeViewController: UIViewController {
 
     @IBAction func show(sender: AnyObject) {
         if let picker = StoryBoardManager.shareInstance.assetPhotoViewController() {
+            if let controller = picker.visibleViewController as? IOAssetPhotoViewController {
+                controller.limit = 5
+                controller.collectionDelegate = self
+            }
             presentViewController(picker, animated: true, completion: nil)
         }
     }
 
+}
+
+extension HomeViewController: IOAssetPhotoViewControllerDelegate {
+    
+    func collectionViewDidSelectedPhotos(photoAssets: [DLPhotoAsset]) {
+        //TODO
+    }
+    
 }
