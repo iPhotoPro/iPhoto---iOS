@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100F12941CE038B6007ECE25 /* IOMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100F12931CE038B6007ECE25 /* IOMenuCell.swift */; };
 		101530701CDE6C5000C82413 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1015306E1CDE6C5000C82413 /* LaunchScreen.storyboard */; };
 		101530711CDE6C5000C82413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1015306F1CDE6C5000C82413 /* Main.storyboard */; };
 		101530731CDE6C8200C82413 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101530721CDE6C8200C82413 /* Photo.storyboard */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100F12931CE038B6007ECE25 /* IOMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMenuCell.swift; sourceTree = "<group>"; };
 		1015306E1CDE6C5000C82413 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1015306F1CDE6C5000C82413 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		101530721CDE6C8200C82413 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				1018E4C11CDFA8D3008A869D /* IOAssetPhotoEmptyView.xib */,
 				10AE404B1CDF189700009AB2 /* IOMenuNavigationController.swift */,
 				10AE40491CDF183800009AB2 /* IOMenuViewController.swift */,
+				100F12931CE038B6007ECE25 /* IOMenuCell.swift */,
 			);
 			path = IOAssetPhoto;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				1018E4C01CDFA4EA008A869D /* IOAssetPhotoEmptyView.swift in Sources */,
 				10AE40571CDF28DB00009AB2 /* IOAssetPhotoCell.swift in Sources */,
 				10AE404C1CDF189700009AB2 /* IOMenuNavigationController.swift in Sources */,
+				100F12941CE038B6007ECE25 /* IOMenuCell.swift in Sources */,
 				10AE404E1CDF1D3000009AB2 /* IOAssetPhotoNavigationController.swift in Sources */,
 				10AE404A1CDF183800009AB2 /* IOMenuViewController.swift in Sources */,
 				1015307A1CDE705900C82413 /* HomeViewController.swift in Sources */,

@@ -17,6 +17,14 @@ class IOAssetPhotoCell: UICollectionViewCell {
     let kShadowColor = UIColor.grayColor()
     let kShadowOpacity: Float = 0.8
     let kShadowRadius: CGFloat = 3
+    let highlightedColor = UIColor(
+        red: 26 / 255,
+        green: 188 / 255,
+        blue: 156 / 255,
+        alpha: 1.0
+    )
+    
+    var identifier: String?
 
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -42,7 +50,15 @@ class IOAssetPhotoCell: UICollectionViewCell {
             photoImageView.image = nil
         }
     }
-
+    
+    func updateState(isSelected: Bool) {
+        if isSelected {
+            backgroundColor = highlightedColor
+        } else {
+            backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
 }
 
 extension UIView {
