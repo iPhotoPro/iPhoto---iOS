@@ -29,8 +29,12 @@ class StoryBoardManager: NSObject {
         return mainStoryBoard().instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController
     }
     
-    func assetPhotoViewController() -> IOAsettPhotoViewController? {
-        return photoStoryBoard().instantiateViewControllerWithIdentifier("IOAsettPhotoViewController") as? IOAsettPhotoViewController
+    func assetPhotoViewController() -> IOAssetPhotoNavigationController? {
+        return photoStoryBoard().instantiateViewControllerWithIdentifier("IOAssetPhotoNavigationController") as? IOAssetPhotoNavigationController
+    }
+    
+    func menuViewController() -> IOMenuNavigationController? {
+        return photoStoryBoard().instantiateViewControllerWithIdentifier("IOMenuNavigationController") as? IOMenuNavigationController
     }
 
 }
