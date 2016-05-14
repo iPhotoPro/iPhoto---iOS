@@ -7,38 +7,55 @@
 //
 
 import UIKit
-import DLPhotoPicker
 
 class HomeViewController: UIViewController {
     
-    private let kPhotoTopPadding: CGFloat = 10
-    private let kNumPhotoPerRow: Int = 3
-    private var photoSize: CGSize = CGSizeZero
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var collageButton: UIButton!
+    @IBOutlet weak var freeStyleButton: UIButton!
+    @IBOutlet weak var editPhotoButton: UIButton!
+    @IBOutlet weak var stickerButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareHomeViewController()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func show(sender: AnyObject) {
-        if let picker = StoryBoardManager.shareInstance.assetPhotoViewController() {
-            if let controller = picker.visibleViewController as? IOAssetPhotoViewController {
-                controller.limit = 5
-                controller.collectionDelegate = self
-            }
-            presentViewController(picker, animated: true, completion: nil)
-        }
+    
+    private func prepareHomeViewController() {
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    @IBAction func didTouchUpInsideCameraButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func didTouchUpInsideCollageButton(sender: AnyObject) {
+        
     }
 
-}
-
-extension HomeViewController: IOAssetPhotoViewControllerDelegate {
+    @IBAction func didTouchUpInsideFreeStyleButton(sender: AnyObject) {
+        
+    }
     
-    func collectionViewDidSelectedPhotos(photoAssets: [DLPhotoAsset]) {
-        //TODO
+    @IBAction func didTouchUpInsideEditPhotoButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func didTouchUpInsideStickerButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func didTouchUpInsideSettingButton(sender: AnyObject) {
+        
     }
     
 }

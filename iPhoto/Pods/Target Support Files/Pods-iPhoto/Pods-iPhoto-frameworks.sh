@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-iPhoto/MBProgressHUD.framework"
   install_framework "Pods-iPhoto/PureLayout.framework"
   install_framework "Pods-iPhoto/SVProgressHUD.framework"
+  install_framework "Pods-iPhoto/SwiftyJSON.framework"
   install_framework "Pods-iPhoto/TOCropViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,5 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-iPhoto/MBProgressHUD.framework"
   install_framework "Pods-iPhoto/PureLayout.framework"
   install_framework "Pods-iPhoto/SVProgressHUD.framework"
+  install_framework "Pods-iPhoto/SwiftyJSON.framework"
   install_framework "Pods-iPhoto/TOCropViewController.framework"
 fi

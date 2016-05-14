@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Asset Photo View Controller-->
@@ -12,7 +14,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fDg-wV-VtM">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eee-4k-Oky">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -41,6 +43,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TU5-BC-mel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1710" y="-618"/>
+        </scene>
+        <!--Photo Edit View Controller-->
+        <scene sceneID="fUc-T0-hDm">
+            <objects>
+                <viewController storyboardIdentifier="IPPhotoEditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U8Q-XP-Lm5" customClass="IPPhotoEditViewController" customModule="iPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nDB-y6-ZEJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="E6R-0d-MHu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KCH-Yt-S3R">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-Sm-bHg">
+                                <rect key="frame" x="31" y="15" width="258" height="374"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEP-PW-Ws3">
+                                <rect key="frame" x="0.0" y="404" width="320" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vaI-DP-y9L"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6R-0d-MHu" firstAttribute="top" secondItem="JEP-PW-Ws3" secondAttribute="bottom" id="1WK-zZ-ROo"/>
+                            <constraint firstAttribute="trailing" secondItem="JEP-PW-Ws3" secondAttribute="trailing" id="5sC-1q-vd0"/>
+                            <constraint firstItem="jJG-Sm-bHg" firstAttribute="leading" secondItem="KCH-Yt-S3R" secondAttribute="leadingMargin" constant="15" id="EJB-Hw-MiV"/>
+                            <constraint firstItem="JEP-PW-Ws3" firstAttribute="leading" secondItem="KCH-Yt-S3R" secondAttribute="leading" id="GGm-ee-cCE"/>
+                            <constraint firstItem="JEP-PW-Ws3" firstAttribute="top" secondItem="jJG-Sm-bHg" secondAttribute="bottom" constant="15" id="X9H-SV-Hwi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jJG-Sm-bHg" secondAttribute="trailing" constant="15" id="lr7-ZK-S4Y"/>
+                            <constraint firstItem="jJG-Sm-bHg" firstAttribute="top" secondItem="nDB-y6-ZEJ" secondAttribute="bottom" constant="15" id="xd2-CM-A1p"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="controlContainerView" destination="JEP-PW-Ws3" id="jWX-WA-tPE"/>
+                        <outlet property="imageView" destination="jJG-Sm-bHg" id="nc4-S3-snk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIe-GL-u2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2226" y="-618"/>
+        </scene>
+        <!--iPhoto Collage View Controller-->
+        <scene sceneID="nHv-uR-HP6">
+            <objects>
+                <viewController storyboardIdentifier="IPhotoCollageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cdU-AQ-bEX" customClass="IPhotoCollageViewController" customModule="iPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GVm-TI-wJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="yBw-7t-lx4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8oD-Jj-a5T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atM-Wt-r9k">
+                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="atM-Wt-r9k" secondAttribute="height" multiplier="1:1" id="aG2-j6-DqN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-5R-v6K">
+                                <rect key="frame" x="0.0" y="468" width="320" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JSN-0b-0X5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZcT-5R-v6K" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="5qg-J1-ZBK"/>
+                            <constraint firstAttribute="trailing" secondItem="atM-Wt-r9k" secondAttribute="trailing" id="CCw-bK-GGt"/>
+                            <constraint firstItem="atM-Wt-r9k" firstAttribute="centerY" secondItem="8oD-Jj-a5T" secondAttribute="centerY" id="JgF-V4-kiN"/>
+                            <constraint firstAttribute="trailing" secondItem="ZcT-5R-v6K" secondAttribute="trailing" id="aSZ-Ya-t8X"/>
+                            <constraint firstItem="atM-Wt-r9k" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="btv-SP-XfP"/>
+                            <constraint firstItem="yBw-7t-lx4" firstAttribute="top" secondItem="ZcT-5R-v6K" secondAttribute="bottom" id="yTc-3W-D6Q"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="collageLayoutContainer" destination="atM-Wt-r9k" id="Y0K-pm-Hf3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ske-4b-lGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2582" y="-618"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="l4T-nx-zKF">

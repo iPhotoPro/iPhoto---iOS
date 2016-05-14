@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -17,25 +19,217 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUe-sR-rFF">
-                                <rect key="frame" x="137" y="269" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="show:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t45-dE-D3w"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-blur" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-ll-7n4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-Ed-2fb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DNN-mL-cj4">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphoto-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dCK-ze-ic0">
+                                            <rect key="frame" x="50" y="90" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="VzO-gE-TXN"/>
+                                                <constraint firstAttribute="height" constant="70" id="uvZ-3n-2xa"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPhoto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04E-fk-dFd">
+                                            <rect key="frame" x="135" y="138" width="52" height="22"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-kL-bBU">
+                                            <rect key="frame" x="20" y="205" width="280" height="195"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Vh-feI">
+                                                    <rect key="frame" x="25" y="25" width="60" height="60"/>
+                                                    <state key="normal" image="home-camera"/>
+                                                    <connections>
+                                                        <action selector="didTouchUpInsideCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5A-bq-pSE"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swS-b2-MIF">
+                                                    <rect key="frame" x="37" y="85" width="37" height="14"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKy-zT-Gqz">
+                                                    <rect key="frame" x="110" y="25" width="60" height="60"/>
+                                                    <state key="normal" image="home-collage"/>
+                                                    <connections>
+                                                        <action selector="didTouchUpInsideCollageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFZ-uI-QGE"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5P-Yh-0l9">
+                                                    <rect key="frame" x="123" y="85" width="35" height="14"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiA-we-j0d">
+                                                    <rect key="frame" x="195" y="25" width="60" height="60"/>
+                                                    <state key="normal" image="home-free"/>
+                                                    <connections>
+                                                        <action selector="didTouchUpInsideFreeStyleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rSz-Qy-Zkv"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmD-0v-nVM">
+                                                    <rect key="frame" x="201" y="85" width="49" height="14"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S4-0t-DT9">
+                                                    <rect key="frame" x="25" y="110" width="60" height="60"/>
+                                                    <state key="normal" image="home-edit"/>
+                                                    <connections>
+                                                        <action selector="didTouchUpInsideEditPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lMJ-p4-h4a"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-09-1Vx">
+                                                    <rect key="frame" x="30" y="170" width="50" height="14"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-qR-ln4">
+                                                    <rect key="frame" x="110" y="110" width="60" height="60"/>
+                                                    <state key="normal" image="home-download"/>
+                                                    <connections>
+                                                        <action selector="didTouchUpInsideStickerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J9Z-tJ-XXf"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sticker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzO-Yk-gkc">
+                                                    <rect key="frame" x="123" y="170" width="35" height="14"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl2-0W-X4S">
+                                                    <rect key="frame" x="195" y="110" width="60" height="60"/>
+                                                    <state key="normal" image="home-setting"/>
+                                                    <connections>
+                                                        <action selector="didTouchUpInsideSettingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPR-B7-Qvq"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvS-S9-rs6">
+                                                    <rect key="frame" x="206" y="170" width="38" height="14"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="y3g-09-1Vx" firstAttribute="centerX" secondItem="5S4-0t-DT9" secondAttribute="centerX" id="2Fi-Gp-vIv"/>
+                                                <constraint firstItem="d5P-Yh-0l9" firstAttribute="top" secondItem="sKy-zT-Gqz" secondAttribute="bottom" id="2cW-5F-jtK"/>
+                                                <constraint firstItem="sKy-zT-Gqz" firstAttribute="height" secondItem="AeV-Vh-feI" secondAttribute="height" id="2dv-31-BjL"/>
+                                                <constraint firstAttribute="trailing" secondItem="OiA-we-j0d" secondAttribute="trailing" constant="25" id="2oM-5x-XNW"/>
+                                                <constraint firstItem="nzO-Yk-gkc" firstAttribute="centerX" secondItem="fWg-qR-ln4" secondAttribute="centerX" id="4c8-5m-VVJ"/>
+                                                <constraint firstItem="OiA-we-j0d" firstAttribute="width" secondItem="AeV-Vh-feI" secondAttribute="width" id="4gn-zp-kxD"/>
+                                                <constraint firstItem="TvS-S9-rs6" firstAttribute="top" secondItem="Dl2-0W-X4S" secondAttribute="bottom" id="7BB-AT-NMO"/>
+                                                <constraint firstItem="nzO-Yk-gkc" firstAttribute="top" secondItem="fWg-qR-ln4" secondAttribute="bottom" id="7Fw-VI-YpK"/>
+                                                <constraint firstItem="TvS-S9-rs6" firstAttribute="centerX" secondItem="Dl2-0W-X4S" secondAttribute="centerX" id="7af-v4-fJx"/>
+                                                <constraint firstItem="5S4-0t-DT9" firstAttribute="width" secondItem="AeV-Vh-feI" secondAttribute="width" id="7tU-EG-Jx5"/>
+                                                <constraint firstAttribute="width" secondItem="eoY-kL-bBU" secondAttribute="height" multiplier="56:39" id="7tf-cS-nWh"/>
+                                                <constraint firstItem="fWg-qR-ln4" firstAttribute="leading" secondItem="5S4-0t-DT9" secondAttribute="trailing" constant="25" id="8TO-AN-2ai"/>
+                                                <constraint firstItem="Dl2-0W-X4S" firstAttribute="leading" secondItem="fWg-qR-ln4" secondAttribute="trailing" constant="25" id="8d6-PI-Vg2"/>
+                                                <constraint firstItem="d5P-Yh-0l9" firstAttribute="centerX" secondItem="sKy-zT-Gqz" secondAttribute="centerX" id="Bne-fT-9Wc"/>
+                                                <constraint firstItem="sKy-zT-Gqz" firstAttribute="leading" secondItem="AeV-Vh-feI" secondAttribute="trailing" constant="25" id="F8B-tP-ei2"/>
+                                                <constraint firstAttribute="bottom" secondItem="5S4-0t-DT9" secondAttribute="bottom" constant="25" id="FDx-IF-yfd"/>
+                                                <constraint firstItem="HmD-0v-nVM" firstAttribute="top" secondItem="OiA-we-j0d" secondAttribute="bottom" id="FTZ-nf-T6C"/>
+                                                <constraint firstItem="5S4-0t-DT9" firstAttribute="height" secondItem="AeV-Vh-feI" secondAttribute="height" id="Gto-bI-NZD"/>
+                                                <constraint firstItem="fWg-qR-ln4" firstAttribute="top" secondItem="sKy-zT-Gqz" secondAttribute="bottom" constant="25" id="KYv-Yg-iTs"/>
+                                                <constraint firstItem="OiA-we-j0d" firstAttribute="height" secondItem="AeV-Vh-feI" secondAttribute="height" id="MCl-la-EFo"/>
+                                                <constraint firstItem="swS-b2-MIF" firstAttribute="top" secondItem="AeV-Vh-feI" secondAttribute="bottom" id="NCz-jo-Fie"/>
+                                                <constraint firstItem="fWg-qR-ln4" firstAttribute="height" secondItem="AeV-Vh-feI" secondAttribute="height" id="Qdn-9x-Gnz"/>
+                                                <constraint firstItem="OiA-we-j0d" firstAttribute="leading" secondItem="sKy-zT-Gqz" secondAttribute="trailing" constant="25" id="XlD-x8-m2M"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dl2-0W-X4S" secondAttribute="trailing" constant="25" id="Z0E-zm-Xvp"/>
+                                                <constraint firstItem="Dl2-0W-X4S" firstAttribute="height" secondItem="AeV-Vh-feI" secondAttribute="height" id="aVz-e8-BFc"/>
+                                                <constraint firstItem="AeV-Vh-feI" firstAttribute="leading" secondItem="eoY-kL-bBU" secondAttribute="leading" constant="25" id="dVR-4W-PPN"/>
+                                                <constraint firstItem="y3g-09-1Vx" firstAttribute="top" secondItem="5S4-0t-DT9" secondAttribute="bottom" id="dVt-Hv-v9D"/>
+                                                <constraint firstItem="swS-b2-MIF" firstAttribute="centerX" secondItem="AeV-Vh-feI" secondAttribute="centerX" id="f2M-10-zh8"/>
+                                                <constraint firstItem="sKy-zT-Gqz" firstAttribute="width" secondItem="AeV-Vh-feI" secondAttribute="width" id="gEb-Tf-w3o"/>
+                                                <constraint firstItem="sKy-zT-Gqz" firstAttribute="top" secondItem="eoY-kL-bBU" secondAttribute="top" constant="25" id="keM-bf-lhz"/>
+                                                <constraint firstItem="5S4-0t-DT9" firstAttribute="top" secondItem="AeV-Vh-feI" secondAttribute="bottom" constant="25" id="lyH-2K-toA"/>
+                                                <constraint firstItem="Dl2-0W-X4S" firstAttribute="width" secondItem="AeV-Vh-feI" secondAttribute="width" id="mfP-MH-vmd"/>
+                                                <constraint firstItem="OiA-we-j0d" firstAttribute="top" secondItem="eoY-kL-bBU" secondAttribute="top" constant="25" id="olw-P1-hkX"/>
+                                                <constraint firstItem="fWg-qR-ln4" firstAttribute="width" secondItem="AeV-Vh-feI" secondAttribute="width" id="qF5-7g-nkg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dl2-0W-X4S" secondAttribute="bottom" constant="25" id="sSt-kb-0q5"/>
+                                                <constraint firstItem="HmD-0v-nVM" firstAttribute="centerX" secondItem="OiA-we-j0d" secondAttribute="centerX" id="taU-OH-1Hl"/>
+                                                <constraint firstAttribute="bottom" secondItem="fWg-qR-ln4" secondAttribute="bottom" constant="25" id="ubY-BW-tcY"/>
+                                                <constraint firstItem="AeV-Vh-feI" firstAttribute="top" secondItem="eoY-kL-bBU" secondAttribute="top" constant="25" id="vnL-9d-Nqg"/>
+                                                <constraint firstItem="Dl2-0W-X4S" firstAttribute="top" secondItem="OiA-we-j0d" secondAttribute="bottom" constant="25" id="y6W-dp-Th4"/>
+                                                <constraint firstItem="5S4-0t-DT9" firstAttribute="leading" secondItem="eoY-kL-bBU" secondAttribute="leading" constant="25" id="zqm-4d-eFS"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design by iPhoto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkr-Xf-xr8">
+                                            <rect key="frame" x="127" y="547" width="66" height="11"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="04E-fk-dFd" firstAttribute="leading" secondItem="dCK-ze-ic0" secondAttribute="trailing" constant="15" id="KsH-ve-BSh"/>
+                                        <constraint firstAttribute="bottom" secondItem="qkr-Xf-xr8" secondAttribute="bottom" constant="10" id="MUD-TT-33F"/>
+                                        <constraint firstItem="eoY-kL-bBU" firstAttribute="leading" secondItem="DNN-mL-cj4" secondAttribute="leading" constant="20" id="S7i-4A-T4C"/>
+                                        <constraint firstItem="eoY-kL-bBU" firstAttribute="top" secondItem="04E-fk-dFd" secondAttribute="bottom" constant="45" id="TV2-Jv-aYD"/>
+                                        <constraint firstItem="qkr-Xf-xr8" firstAttribute="centerX" secondItem="DNN-mL-cj4" secondAttribute="centerX" id="TV8-Si-AXs"/>
+                                        <constraint firstItem="dCK-ze-ic0" firstAttribute="top" secondItem="DNN-mL-cj4" secondAttribute="top" constant="90" id="Wvm-jC-2ir"/>
+                                        <constraint firstItem="dCK-ze-ic0" firstAttribute="leading" secondItem="DNN-mL-cj4" secondAttribute="leading" constant="50" id="hvw-dM-ek0"/>
+                                        <constraint firstItem="04E-fk-dFd" firstAttribute="bottom" secondItem="dCK-ze-ic0" secondAttribute="bottom" id="leS-qY-tbB"/>
+                                        <constraint firstAttribute="trailing" secondItem="eoY-kL-bBU" secondAttribute="trailing" constant="20" id="wdk-Fz-Pld"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IUe-sR-rFF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7km-2g-QmG"/>
-                            <constraint firstItem="IUe-sR-rFF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ugi-m9-cbL"/>
+                            <constraint firstItem="PFe-ll-7n4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Qi-pI-0RP"/>
+                            <constraint firstItem="PFe-ll-7n4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="H7A-Lh-F4b"/>
+                            <constraint firstAttribute="trailing" secondItem="PFe-ll-7n4" secondAttribute="trailing" id="IRZ-Kj-bB4"/>
+                            <constraint firstItem="Xdc-Ed-2fb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KGK-Vh-PQE"/>
+                            <constraint firstItem="PFe-ll-7n4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LmV-Nr-a7n"/>
+                            <constraint firstAttribute="trailing" secondItem="Xdc-Ed-2fb" secondAttribute="trailing" id="ggd-Ns-IIM"/>
+                            <constraint firstItem="Xdc-Ed-2fb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ivo-vf-4s1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PFe-ll-7n4" secondAttribute="bottom" id="v3j-Uh-bUm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xdc-Ed-2fb" secondAttribute="bottom" id="ydV-Mf-j9I"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LmV-Nr-a7n"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="AeV-Vh-feI" id="tea-WQ-IvQ"/>
+                        <outlet property="collageButton" destination="sKy-zT-Gqz" id="T6Y-dt-7nb"/>
+                        <outlet property="editPhotoButton" destination="5S4-0t-DT9" id="hfq-zu-zF4"/>
+                        <outlet property="freeStyleButton" destination="OiA-we-j0d" id="XlS-J0-Tho"/>
+                        <outlet property="settingButton" destination="Dl2-0W-X4S" id="p6h-FN-pKV"/>
+                        <outlet property="stickerButton" destination="fWg-qR-ln4" id="w9O-jn-sfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186" y="-143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-blur" width="320" height="568"/>
+        <image name="home-camera" width="60" height="60"/>
+        <image name="home-collage" width="60" height="60"/>
+        <image name="home-download" width="60" height="60"/>
+        <image name="home-edit" width="60" height="60"/>
+        <image name="home-free" width="60" height="60"/>
+        <image name="home-setting" width="60" height="60"/>
+        <image name="iphoto-logo" width="70" height="70"/>
+    </resources>
 </document>

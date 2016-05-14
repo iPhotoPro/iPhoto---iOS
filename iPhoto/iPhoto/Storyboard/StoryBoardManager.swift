@@ -36,5 +36,13 @@ class StoryBoardManager: NSObject {
     func menuViewController() -> IOMenuNavigationController? {
         return photoStoryBoard().instantiateViewControllerWithIdentifier("IOMenuNavigationController") as? IOMenuNavigationController
     }
+    
+    func photoEditViewController() -> IPPhotoEditViewController? {
+        return photoStoryBoard().instantiateViewControllerWithIdentifier("IPPhotoEditViewController") as? IPPhotoEditViewController
+    }
+    
+    func photoCollageViewController() -> IPhotoCollageViewController? {
+        return photoStoryBoard().instantiateViewControllerWithIdentifier("IPhotoCollageViewController") as? IPhotoCollageViewController
+    }
 
 }
