@@ -9,6 +9,11 @@
 import UIKit
 import DLPhotoPicker
 
+enum Target {
+    case Edit
+    case Union
+}
+
 protocol IOAssetPhotoViewControllerDelegate: class {
     func collectionViewDidSelectedPhotos(photoAssets: [DLPhotoAsset])
 }
@@ -20,6 +25,7 @@ class IOAssetPhotoViewController: DLPhotoCollectionViewController {
     let kNumPhotoPerRow: Int = 3
     
     var limit: Int = 0
+    var target: Target = .Edit
     lazy private var selectedIndexPaths: [NSIndexPath] = [NSIndexPath]()
     lazy private var selectedAssets: [DLPhotoAsset] = [DLPhotoAsset]()
     weak var collectionDelegate: IOAssetPhotoViewControllerDelegate?
@@ -162,11 +168,23 @@ extension IOAssetPhotoViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if selectedIndexPaths.count < limit {
-            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? IOAssetPhotoCell {
-                cell.updateState(true)
+        switch target {
+        case .Edit:
+            if let controller = StoryBoardManager.shareInstance.photoEditViewController() {
+                if let currentAsset = assets[indexPath.row] as? DLPhotoAsset {
+                    controller.asset = currentAsset
+                }
+                navigationController?.pushViewController(controller, animated: true)
             }
-            selectedIndexPaths.append(indexPath)
+            break
+        case .Union:
+            if selectedIndexPaths.count < limit {
+                if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? IOAssetPhotoCell {
+                    cell.updateState(true)
+                }
+                selectedIndexPaths.append(indexPath)
+            }
+            break
         }
     }
     

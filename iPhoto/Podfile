@@ -5,8 +5,9 @@
 
 target 'iPhoto' do
     
-    pod 'GPUImage', '~> 0.1.0'
+    pod 'GPUImage', '~> 0.1.7'
     pod 'DLPhotoPicker'
+    pod 'SwiftyJSON'
 
 end
 
