@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IPhotoCollageMainLayoutView" customModule="iPhoto" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="b6c-0Q-Fyx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pcn-5S-MJH">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="dQQ-OS-I91"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="pB8-XE-cwy"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="b6c-0Q-Fyx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6zj-qf-9Vn"/>
+                <constraint firstAttribute="bottom" secondItem="b6c-0Q-Fyx" secondAttribute="bottom" id="PkU-ap-3XL"/>
+                <constraint firstAttribute="trailing" secondItem="b6c-0Q-Fyx" secondAttribute="trailing" id="fLM-Ef-IDb"/>
+                <constraint firstItem="b6c-0Q-Fyx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tHt-av-x1x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="b6c-0Q-Fyx" id="MZa-jV-NWb"/>
+            </connections>
+            <point key="canvasLocation" x="674" y="271"/>
+        </view>
+    </objects>
+</document>

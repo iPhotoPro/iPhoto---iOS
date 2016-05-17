@@ -4,6 +4,7 @@ PODS:
     - PureLayout (~> 3.0.0)
     - SVProgressHUD
     - TOCropViewController
+  - FBLikeLayout (1.2)
   - GPUImage (0.1.7)
   - MBProgressHUD (0.9.2)
   - PureLayout (3.0.1)
@@ -13,11 +14,13 @@ PODS:
 
 DEPENDENCIES:
   - DLPhotoPicker
+  - FBLikeLayout
   - GPUImage (~> 0.1.7)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   DLPhotoPicker: 1d52127f2c673a7b905a8386ec1a9bb5d80ba5a7
+  FBLikeLayout: 687de95c7f29623dc4f7591c9746b99756952607
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb

@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func didTouchUpInsideCollageButton(sender: AnyObject) {
-        
+        HomeRouting.shareInstance.presentPhotoCollageViewController(self)
     }
 
     @IBAction func didTouchUpInsideFreeStyleButton(sender: AnyObject) {
