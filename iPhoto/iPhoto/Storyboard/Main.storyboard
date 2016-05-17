@@ -22,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-blur" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-ll-7n4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-Ed-2fb">
+                            <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-Ed-2fb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DNN-mL-cj4">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -186,7 +186,10 @@
                                         <constraint firstAttribute="trailing" secondItem="eoY-kL-bBU" secondAttribute="trailing" constant="20" id="wdk-Fz-Pld"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="light"/>
+                                <color key="backgroundColor" red="0.17463699494949492" green="0.17463699494949492" blue="0.17463699494949492" alpha="1" colorSpace="calibratedRGB"/>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -223,7 +226,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background-blur" width="320" height="568"/>
+        <image name="background-blur" width="640" height="1136"/>
         <image name="home-camera" width="60" height="60"/>
         <image name="home-collage" width="60" height="60"/>
         <image name="home-download" width="60" height="60"/>
