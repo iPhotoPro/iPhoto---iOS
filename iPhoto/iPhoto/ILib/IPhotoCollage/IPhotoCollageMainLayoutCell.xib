@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collage-add" translatesAutoresizingMaskIntoConstraints="NO" id="eyp-Qt-dBy">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="8KT-Si-Bwa">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                     </imageView>
                 </subviews>
@@ -21,15 +21,18 @@
             </view>
             <color key="backgroundColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="eyp-Qt-dBy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1vN-bd-Vc8"/>
-                <constraint firstItem="eyp-Qt-dBy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fff-wi-YAu"/>
-                <constraint firstAttribute="trailing" secondItem="eyp-Qt-dBy" secondAttribute="trailing" id="Nvi-CO-tiD"/>
-                <constraint firstAttribute="bottom" secondItem="eyp-Qt-dBy" secondAttribute="bottom" id="Ujj-lJ-DOr"/>
+                <constraint firstItem="8KT-Si-Bwa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DWx-mh-NV8"/>
+                <constraint firstAttribute="trailing" secondItem="8KT-Si-Bwa" secondAttribute="trailing" id="PQ3-9s-hIG"/>
+                <constraint firstAttribute="bottom" secondItem="8KT-Si-Bwa" secondAttribute="bottom" id="kaz-El-g0K"/>
+                <constraint firstItem="8KT-Si-Bwa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rMo-AA-OBL"/>
             </constraints>
+            <connections>
+                <outlet property="imageView" destination="8KT-Si-Bwa" id="G9a-J5-0fn"/>
+            </connections>
             <point key="canvasLocation" x="648" y="497"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="collage-add" width="64" height="64"/>
+        <image name="5" width="610" height="888"/>
     </resources>
 </document>

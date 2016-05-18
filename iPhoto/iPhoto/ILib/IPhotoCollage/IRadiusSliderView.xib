@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="V0Y-cI-U3B" customClass="IRadiusSliderView" customModule="iPhoto" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBD-u7-PlW" customClass="IPSlider" customModule="iPhoto" customModuleProvider="target">
+                    <rect key="frame" x="30" y="25" width="260" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="dcS-PM-fMI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="thumbTintColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="trackTintColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="spring-slider"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didChangeValue:" destination="V0Y-cI-U3B" eventType="valueChanged" id="pGx-eR-voc"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11w-N8-0L2">
+                    <rect key="frame" x="30" y="8" width="16" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6P-HH-GSY">
+                    <rect key="frame" x="152" y="8" width="16" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="0.60101209060000005" blue="0.0051698231230000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5O2-at-fmf">
+                    <rect key="frame" x="276" y="8" width="14" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eBD-u7-PlW" secondAttribute="trailing" constant="30" id="0CM-g7-rUh"/>
+                <constraint firstItem="eBD-u7-PlW" firstAttribute="leading" secondItem="V0Y-cI-U3B" secondAttribute="leading" constant="30" id="PyP-t2-kty"/>
+                <constraint firstItem="z6P-HH-GSY" firstAttribute="centerX" secondItem="V0Y-cI-U3B" secondAttribute="centerX" id="Rs9-r5-C7l"/>
+                <constraint firstItem="eBD-u7-PlW" firstAttribute="top" secondItem="5O2-at-fmf" secondAttribute="bottom" constant="5" id="U7f-w9-IJq"/>
+                <constraint firstAttribute="bottom" secondItem="eBD-u7-PlW" secondAttribute="bottom" id="Ukt-EE-fVy"/>
+                <constraint firstItem="5O2-at-fmf" firstAttribute="trailing" secondItem="eBD-u7-PlW" secondAttribute="trailing" id="aTG-bv-Mfo"/>
+                <constraint firstItem="11w-N8-0L2" firstAttribute="leading" secondItem="eBD-u7-PlW" secondAttribute="leading" id="cqu-4g-xWc"/>
+                <constraint firstItem="eBD-u7-PlW" firstAttribute="top" secondItem="11w-N8-0L2" secondAttribute="bottom" constant="5" id="gUl-2t-kIw"/>
+                <constraint firstItem="eBD-u7-PlW" firstAttribute="top" secondItem="z6P-HH-GSY" secondAttribute="bottom" constant="5" id="jiR-X6-rNX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="maxValueLabel" destination="5O2-at-fmf" id="4Kj-7m-oAW"/>
+                <outlet property="minValueLabel" destination="11w-N8-0L2" id="ExR-DY-u8O"/>
+                <outlet property="slider" destination="eBD-u7-PlW" id="sBO-tL-9gw"/>
+                <outlet property="valueLabel" destination="z6P-HH-GSY" id="sXW-aV-GjY"/>
+            </connections>
+            <point key="canvasLocation" x="422" y="369.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="spring-slider" width="33" height="33"/>
+    </resources>
+</document>

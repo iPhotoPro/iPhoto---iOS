@@ -32,6 +32,7 @@ class IPhotoCollageViewController: UIViewController {
     private var currentAction: Action = .Layout
     private var layoutView: IPhotoCollageLayoutListView?
     private var paddingView: IPaddingSliderView?
+    private var radiusView: IRadiusSliderView?
     
     @IBOutlet weak var layoutActionButton: UIButton!
     @IBOutlet weak var paddingActionButton: UIButton!
@@ -108,7 +109,10 @@ class IPhotoCollageViewController: UIViewController {
             view = paddingView
             break
         case .Radius:
-            
+            if radiusView == nil {
+                radiusView = IRadiusSliderView.loadFromNib()
+            }
+            view = radiusView
             break
         case .Color:
             
@@ -186,7 +190,7 @@ class IPhotoCollageViewController: UIViewController {
         if currentAction != .Radius {
             removeActionView()
             currentAction = .Radius
-            //
+            addActionView()
             updateActionButtonState()
         }
     }
