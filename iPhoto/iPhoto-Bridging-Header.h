@@ -8,4 +8,4 @@
 
 #import <GPUImage/GPUImage.h>
 #import <DLPhotoPicker/DLPhotoPicker.h>
-#import <FBLikeLayout/FBLikeLayout.h>
+#import "AJFCollectionViewWaterfallLayout.h"

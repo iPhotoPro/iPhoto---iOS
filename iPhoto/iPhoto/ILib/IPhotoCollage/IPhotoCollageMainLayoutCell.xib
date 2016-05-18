@@ -8,13 +8,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IPhotoCollageMainLayoutCellIdentifier" id="gTV-IL-0wX" customClass="IPhotoCollageMainLayoutCell" customModule="iPhoto" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="8KT-Si-Bwa">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    </imageView>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="8KT-Si-Bwa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DWx-mh-NV8"/>
+                <constraint firstAttribute="trailing" secondItem="8KT-Si-Bwa" secondAttribute="trailing" id="PQ3-9s-hIG"/>
+                <constraint firstAttribute="bottom" secondItem="8KT-Si-Bwa" secondAttribute="bottom" id="kaz-El-g0K"/>
+                <constraint firstItem="8KT-Si-Bwa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rMo-AA-OBL"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="8KT-Si-Bwa" id="G9a-J5-0fn"/>
+            </connections>
+            <point key="canvasLocation" x="648" y="497"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="5" width="610" height="888"/>
+    </resources>
 </document>

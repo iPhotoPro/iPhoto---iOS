@@ -85,7 +85,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-iPhoto/DLPhotoPicker.framework"
-  install_framework "Pods-iPhoto/FBLikeLayout.framework"
   install_framework "Pods-iPhoto/GPUImage.framework"
   install_framework "Pods-iPhoto/MBProgressHUD.framework"
   install_framework "Pods-iPhoto/PureLayout.framework"
@@ -95,7 +94,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-iPhoto/DLPhotoPicker.framework"
-  install_framework "Pods-iPhoto/FBLikeLayout.framework"
   install_framework "Pods-iPhoto/GPUImage.framework"
   install_framework "Pods-iPhoto/MBProgressHUD.framework"
   install_framework "Pods-iPhoto/PureLayout.framework"

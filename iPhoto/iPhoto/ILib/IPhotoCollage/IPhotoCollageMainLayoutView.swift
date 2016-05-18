@@ -7,22 +7,17 @@
 //
 
 import UIKit
-import FBLikeLayout
 
 class IPhotoCollageMainLayoutView: UIView {
+    
+    let kPaddingDefault: CGFloat = 10.0
 
     @IBOutlet weak var collectionView: UICollectionView!
-    private var data: [ILayout] = [ILayout]()
+    private var data: ILayout = ILayout()
     private var padding: CGFloat = 10.0 {
         didSet {
-            if let fbLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                fbLayout.sectionInset = UIEdgeInsets(
-                    top: padding,
-                    left: padding,
-                    bottom: padding,
-                    right: padding
-                )
-                fbLayout.invalidateLayout()
+            if let layout = collectionView.collectionViewLayout as? AJFCollectionViewWaterfallLayout {
+                layout.invalidateLayout()
             }
         }
     }
@@ -41,11 +36,12 @@ class IPhotoCollageMainLayoutView: UIView {
         padding = newPadding
     }
     
-    func reloadCollageViewWithData(layouts: [ILayout]) {
+    func reloadCollageViewWithData(layouts: ILayout) {
         weak var weakSelf = self
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
             weakSelf?.data = layouts
-            dispatch_async(dispatch_get_main_queue(), { 
+            dispatch_async(dispatch_get_main_queue(), {
+                weakSelf?.padding = self.kPaddingDefault
                 weakSelf?.collectionView.reloadData()
             })
         }
@@ -57,30 +53,48 @@ class IPhotoCollageMainLayoutView: UIView {
     }
     
     private func prepareLayout() {
-        if collectionView.collectionViewLayout.isKindOfClass(FBLikeLayout) {
-            let fbLayout = FBLikeLayout()
-            fbLayout.singleCellWidth = frame.width
-            fbLayout.maxCellSpace = 3
-            fbLayout.forceCellWidthForMinimumInteritemSpacing = false
-            fbLayout.fullImagePercentageOfOccurrency = 50
-            collectionView.collectionViewLayout = fbLayout
-            collectionView.reloadData()
+        if let layout = collectionView.collectionViewLayout as? AJFCollectionViewWaterfallLayout {
+            layout.stretchingType = .NoStretching
         }
     }
 
 }
 
-extension IPhotoCollageMainLayoutView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension IPhotoCollageMainLayoutView: AJFCollectionViewWaterfallLayoutDelegate {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return data.sections.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.sections[section].sizes.count
+    }
+    
+    func collectionView(collectionView: UICollectionView!, numberOfColumnsInSection section: Int) -> Int {
+        return data.sections[section].numColumn
+    }
+    
+    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, columnSpacingForSection section: Int) -> Int {
+        return Int(padding)
+    }
+    
+    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, minimumInteritemSpacingForSectionAtIndex section: Int) -> Int {
+        return Int(padding)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+    }
+    
+}
+
+extension IPhotoCollageMainLayoutView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     private func registerPhotoCollageMainLayoutCell() {
         collectionView.registerNib(
             UINib(nibName: IPhotoCollageMainLayoutCell.Constant.name, bundle: nil),
             forCellWithReuseIdentifier: IPhotoCollageMainLayoutCell.Constant.identifier
         )
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -99,24 +113,13 @@ extension IPhotoCollageMainLayoutView: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let layout = data[indexPath.row]
-        var size = layout.size
-        let paddingUnit = padding / 2
-        size.width = size.width - layout.hPadding * paddingUnit
-        size.height = size.height - layout.vPadding * paddingUnit
+        let section = data.sections[indexPath.section]
+        let iSize = section.sizes[indexPath.row]
+        var size = iSize.size
+        let paddingUnit: CGFloat = padding / 2.0
+        size.width = size.width - iSize.hPadding * paddingUnit
+        size.height = size.height - iSize.vPadding * paddingUnit
         return size
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return padding
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return padding
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

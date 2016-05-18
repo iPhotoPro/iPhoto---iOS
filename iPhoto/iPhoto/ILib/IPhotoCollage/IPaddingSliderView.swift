@@ -15,7 +15,6 @@ import UIKit
 class IPaddingSliderView: UIView {
     
     let kPaddingMin: Int = 0
-    let kPaddingDefault: Int = 10
     let kPaddingMax: Int = 30
     
     @IBOutlet weak var minValueLabel: UILabel!
@@ -33,10 +32,10 @@ class IPaddingSliderView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        defaultSilder(kPaddingDefault)
+        defaultSilder()
     }
     
-    private func defaultSilder(value: Int) {
+    func defaultSilder() {
         slider.value = CGFloat(kPaddingDefault) / CGFloat(kPaddingMax - kPaddingMin)
         valueLabel.text = "\(kPaddingDefault)"
         minValueLabel.text = "\(kPaddingMin)"
