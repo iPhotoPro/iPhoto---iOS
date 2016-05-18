@@ -1,6 +1,0 @@
-framework module FBLikeLayout {
-  umbrella header "FBLikeLayout-umbrella.h"
-
-  export *
-  module * { export * }
-}

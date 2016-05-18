@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-kH-PpG" customClass="IPSlider" customModule="iPhoto" customModuleProvider="target">
-                    <rect key="frame" x="20" y="25" width="280" height="40"/>
+                    <rect key="frame" x="30" y="25" width="260" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Id5-lc-83b"/>
@@ -31,7 +31,7 @@
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2U-p5-uBd">
-                    <rect key="frame" x="20" y="8" width="16" height="12"/>
+                    <rect key="frame" x="30" y="8" width="16" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETP-sv-Q29">
-                    <rect key="frame" x="286" y="8" width="14" height="12"/>
+                    <rect key="frame" x="276" y="8" width="14" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -55,9 +55,9 @@
                 <constraint firstAttribute="bottom" secondItem="m2U-kH-PpG" secondAttribute="bottom" id="HZE-st-ao2"/>
                 <constraint firstItem="Lgw-8h-nvR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IHa-LG-DA2"/>
                 <constraint firstItem="m2U-kH-PpG" firstAttribute="top" secondItem="Lgw-8h-nvR" secondAttribute="bottom" constant="5" id="PhS-H8-8CQ"/>
-                <constraint firstItem="m2U-kH-PpG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Qq4-yp-IeZ"/>
+                <constraint firstItem="m2U-kH-PpG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="Qq4-yp-IeZ"/>
                 <constraint firstItem="ETP-sv-Q29" firstAttribute="trailing" secondItem="m2U-kH-PpG" secondAttribute="trailing" id="Vr5-70-c5W"/>
-                <constraint firstAttribute="trailing" secondItem="m2U-kH-PpG" secondAttribute="trailing" constant="20" id="fWv-EJ-pDV"/>
+                <constraint firstAttribute="trailing" secondItem="m2U-kH-PpG" secondAttribute="trailing" constant="30" id="fWv-EJ-pDV"/>
                 <constraint firstItem="m2U-kH-PpG" firstAttribute="top" secondItem="ETP-sv-Q29" secondAttribute="bottom" constant="5" id="m1Y-xW-weV"/>
                 <constraint firstItem="f2U-p5-uBd" firstAttribute="leading" secondItem="m2U-kH-PpG" secondAttribute="leading" id="qL4-s1-qaS"/>
             </constraints>

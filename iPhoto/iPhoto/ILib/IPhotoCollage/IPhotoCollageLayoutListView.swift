@@ -39,7 +39,7 @@ extension IPhotoCollageLayoutListView: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return IPhotoCollageManager.shareInstance.photoCollages.count
+        return IPhotoCollageManager.shareInstance.photoCollages.layouts.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

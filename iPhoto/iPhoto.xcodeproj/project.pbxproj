@@ -54,6 +54,7 @@
 		10B1B36B1CEA4DDC00F41F5A /* IPhotoCollageMainLayoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B1B3691CEA4DDC00F41F5A /* IPhotoCollageMainLayoutCell.xib */; };
 		10B1B36D1CEAB30000F41F5A /* IPaddingSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1B36C1CEAB30000F41F5A /* IPaddingSliderView.swift */; };
 		10B1B3701CEAB31B00F41F5A /* IPaddingSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B1B36F1CEAB31B00F41F5A /* IPaddingSliderView.xib */; };
+		10B1B3B21CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B1B3B01CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.m */; };
 		13574242B18AE1DCBCFD845E /* Pods_iPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,9 @@
 		10B1B3691CEA4DDC00F41F5A /* IPhotoCollageMainLayoutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPhotoCollageMainLayoutCell.xib; sourceTree = "<group>"; };
 		10B1B36C1CEAB30000F41F5A /* IPaddingSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPaddingSliderView.swift; sourceTree = "<group>"; };
 		10B1B36F1CEAB31B00F41F5A /* IPaddingSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPaddingSliderView.xib; sourceTree = "<group>"; };
+		10B1B3AF1CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJFCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		10B1B3B01CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJFCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		10B1B3B11CEB559700F41F5A /* AJFCollectionViewWaterfallLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJFCollectionViewWaterfallLayoutDelegate.h; sourceTree = "<group>"; };
 		1DDEC5867932DFD8A8B0B67B /* Pods-iPhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto.debug.xcconfig"; sourceTree = "<group>"; };
 		313C92A46E4DC7582C521AFC /* Pods-iPhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoto/Pods-iPhoto.release.xcconfig"; sourceTree = "<group>"; };
 		74E9F89D73133F76458D4812 /* Pods_iPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +377,9 @@
 				10B1B3661CEA4D5B00F41F5A /* IPhotoCollageMainLayoutView.xib */,
 				10B1B3681CEA4DDC00F41F5A /* IPhotoCollageMainLayoutCell.swift */,
 				10B1B3691CEA4DDC00F41F5A /* IPhotoCollageMainLayoutCell.xib */,
+				10B1B3AF1CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.h */,
+				10B1B3B01CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.m */,
+				10B1B3B11CEB559700F41F5A /* AJFCollectionViewWaterfallLayoutDelegate.h */,
 			);
 			name = CollageViewLayout;
 			sourceTree = "<group>";
@@ -618,6 +625,7 @@
 				10B1B30E1CE75F1800F41F5A /* IOAssetPhotoCell.swift in Sources */,
 				10B1B3121CE75F1800F41F5A /* IOAssetPhotoNavigationController.swift in Sources */,
 				10B1B31B1CE75F1800F41F5A /* IPhotoCollageManager.swift in Sources */,
+				10B1B3B21CEB559700F41F5A /* AJFCollectionViewWaterfallLayout.m in Sources */,
 				10B1B3101CE75F1800F41F5A /* IOAssetPhotoEmptyView.swift in Sources */,
 				10B1B36D1CEAB30000F41F5A /* IPaddingSliderView.swift in Sources */,
 				101530751CDE6CA800C82413 /* StoryBoardManager.swift in Sources */,

@@ -106,7 +106,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7W-m5-dv7">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
-                                        <state key="normal" image="collage-collage"/>
+                                        <state key="normal" image="collage-collage-select"/>
                                         <connections>
                                             <action selector="didTouchUpInsideLayoutButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="1s4-BD-0Pq"/>
                                         </connections>
@@ -121,10 +121,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Err-AK-Ktd">
                                         <rect key="frame" x="160" y="0.0" width="80" height="44"/>
                                         <state key="normal" image="collage-radius"/>
+                                        <connections>
+                                            <action selector="didTouchUpInsideRadiusButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="buT-JY-ywp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-54-SZx">
                                         <rect key="frame" x="240" y="0.0" width="80" height="44"/>
                                         <state key="normal" image="collage-color"/>
+                                        <connections>
+                                            <action selector="didTouchUpInsideColorButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="Lwe-Op-33B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.086274509803921567" green="0.090196078431372548" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,32 +232,52 @@
                                     <constraint firstItem="Dvq-rb-qV3" firstAttribute="top" secondItem="6LI-ha-3ed" secondAttribute="top" id="oea-5T-27U"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCg-Hy-St2">
+                                <rect key="frame" x="0.0" y="44" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Fws-Ed-Flf"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjr-Rf-spt">
-                                <rect key="frame" x="0.0" y="74" width="320" height="355"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="414"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dCg-Hy-St2" secondAttribute="trailing" id="08a-RL-lgA"/>
                             <constraint firstItem="ltH-6g-gTV" firstAttribute="top" secondItem="g5A-Cc-aLW" secondAttribute="bottom" id="171-FC-iqP"/>
-                            <constraint firstItem="Rjr-Rf-spt" firstAttribute="top" secondItem="6LI-ha-3ed" secondAttribute="bottom" constant="30" id="1aD-Zk-eJH"/>
-                            <constraint firstItem="Rjr-Rf-spt" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="2qV-Wc-AhP"/>
-                            <constraint firstItem="g5A-Cc-aLW" firstAttribute="top" secondItem="Rjr-Rf-spt" secondAttribute="bottom" constant="30" id="3sz-il-oDY"/>
                             <constraint firstAttribute="trailing" secondItem="g5A-Cc-aLW" secondAttribute="trailing" id="6mJ-uQ-3Wo"/>
+                            <constraint firstItem="Rjr-Rf-spt" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="COj-Jc-LBT"/>
+                            <constraint firstItem="dCg-Hy-St2" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="DJi-4J-3Wr"/>
                             <constraint firstItem="6LI-ha-3ed" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="ECn-g8-Tpe"/>
+                            <constraint firstItem="g5A-Cc-aLW" firstAttribute="top" secondItem="Rjr-Rf-spt" secondAttribute="bottom" id="IkS-Kd-mik"/>
+                            <constraint firstAttribute="trailing" secondItem="Rjr-Rf-spt" secondAttribute="trailing" id="YfP-r7-K9c"/>
                             <constraint firstItem="ltH-6g-gTV" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="YgQ-i1-eKf"/>
+                            <constraint firstItem="dCg-Hy-St2" firstAttribute="top" secondItem="6LI-ha-3ed" secondAttribute="bottom" id="agu-6b-IOA"/>
+                            <constraint firstItem="Rjr-Rf-spt" firstAttribute="top" secondItem="6LI-ha-3ed" secondAttribute="bottom" id="eEY-TZ-MW2"/>
                             <constraint firstItem="yBw-7t-lx4" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="bottom" id="ecy-r4-4Qq"/>
                             <constraint firstAttribute="trailing" secondItem="ltH-6g-gTV" secondAttribute="trailing" id="gec-dp-ZIV"/>
+                            <constraint firstItem="Rjr-Rf-spt" firstAttribute="top" secondItem="dCg-Hy-St2" secondAttribute="bottom" id="iUT-xC-S5d"/>
                             <constraint firstItem="6LI-ha-3ed" firstAttribute="top" secondItem="8oD-Jj-a5T" secondAttribute="top" id="t4g-hM-F0P"/>
-                            <constraint firstAttribute="trailing" secondItem="Rjr-Rf-spt" secondAttribute="trailing" id="uYP-bI-35K"/>
                             <constraint firstItem="g5A-Cc-aLW" firstAttribute="leading" secondItem="8oD-Jj-a5T" secondAttribute="leading" id="y0i-35-d4p"/>
                             <constraint firstAttribute="trailing" secondItem="6LI-ha-3ed" secondAttribute="trailing" id="yUF-b8-TkA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eEY-TZ-MW2"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="collageContainerView" destination="Rjr-Rf-spt" id="DJI-yV-Bbt"/>
+                        <outlet property="colorActionButton" destination="jzG-54-SZx" id="GB0-La-ttv"/>
+                        <outlet property="layoutActionButton" destination="F7W-m5-dv7" id="R0j-SM-0VS"/>
+                        <outlet property="paddingActionButton" destination="hfX-Ww-aRv" id="mFw-6k-bf8"/>
                         <outlet property="photoCollageContainerView" destination="g5A-Cc-aLW" id="kMs-Ad-UcG"/>
+                        <outlet property="radiusActionButton" destination="Err-AK-Ktd" id="xul-ct-dey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ske-4b-lGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,7 +364,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="collage-collage" width="80" height="44"/>
+        <image name="collage-collage-select" width="80" height="44"/>
         <image name="collage-color" width="80" height="44"/>
         <image name="collage-done" width="44" height="44"/>
         <image name="collage-home" width="44" height="44"/>
