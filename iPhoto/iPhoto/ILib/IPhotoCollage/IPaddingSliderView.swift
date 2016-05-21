@@ -7,23 +7,23 @@
 //
 
 import UIKit
+import ASValueTrackingSlider
 
 @objc protocol IPaddingSliderViewDelegate: class {
-    optional func didChangeValue(slider: IPSlider, value: Int)
+    optional func didChangeValuePadding(slider: ASValueTrackingSlider, value: Float)
 }
 
 class IPaddingSliderView: UIView {
     
-    let kPaddingMin: Int = 0
-    let kPaddingMax: Int = 30
+    let kPaddingMin: Float = 0.0
+    let kPaddingMax: Float = 30.0
     
     @IBOutlet weak var minValueLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var maxValueLabel: UILabel!
-    @IBOutlet weak var slider: IPSlider!
+    @IBOutlet weak var slider: ASValueTrackingSlider!
     
     weak var delegate: IPaddingSliderViewDelegate?
-    private var currentValue: Int = 0
+    private var currentValue: Float = 0
 
     class func loadFromNib() -> IPaddingSliderView? {
         let objects = NSBundle.mainBundle().loadNibNamed("IPaddingSliderView", owner: self, options: nil)
@@ -36,26 +36,39 @@ class IPaddingSliderView: UIView {
     }
     
     func defaultSilder() {
-        slider.value = CGFloat(kPaddingDefault) / CGFloat(kPaddingMax - kPaddingMin)
-        valueLabel.text = "\(kPaddingDefault)"
         minValueLabel.text = "\(kPaddingMin)"
         maxValueLabel.text = "\(kPaddingMax)"
-        currentValue = kPaddingDefault
+        slider.value = kPaddingDefault
+        slider.dataSource = self
+        slider.minimumValue = kPaddingMin
+        slider.maximumValue = kPaddingMax
+        slider.setThumbImage(UIImage(named: "collage-slider-thumb"), forState: .Normal)
+        slider.setThumbImage(UIImage(named: "collage-slider-thumb"), forState: .Highlighted)
+        slider.popUpViewCornerRadius = 2.0
+        slider.setMaxFractionDigitsDisplayed(0)
+        slider.popUpViewColor = UIColor.whiteColor()
+        slider.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 13)
+        slider.textColor = UIColor(hexa: "1ABC9C")
+        slider.popUpViewWidthPaddingFactor = 1.7
+        slider.popUpViewHeightPaddingFactor = 1.5
     }
 
     @IBAction func didChangeValue(sender: AnyObject) {
-        if let control = sender as? IPSlider {
-            let value = Int(ceil(control.value * CGFloat(kPaddingMax - kPaddingMin)))
-            if value != kPaddingDefault {
-                valueLabel.text = "\(value) | \(kPaddingDefault)"
-            } else {
-                valueLabel.text = "\(value)"
-            }
+        if let control = sender as? ASValueTrackingSlider {
+            let value = control.value
             if value != currentValue {
                 currentValue = value
-                delegate?.didChangeValue?(control, value: value)
+                delegate?.didChangeValuePadding?(control, value: value)
             }
         }
+    }
+    
+}
+
+extension IPaddingSliderView: ASValueTrackingSliderDataSource {
+    
+    func slider(slider: ASValueTrackingSlider!, stringForValue value: Float) -> String! {
+        return "\(Int(slider.value)) | \(Int(kPaddingDefault))"
     }
     
 }

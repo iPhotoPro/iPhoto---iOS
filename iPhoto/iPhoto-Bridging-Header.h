@@ -9,3 +9,4 @@
 #import <GPUImage/GPUImage.h>
 #import <DLPhotoPicker/DLPhotoPicker.h>
 #import "AJFCollectionViewWaterfallLayout.h"
+#import <ASValueTrackingSlider/ASValueTrackingSlider.h>

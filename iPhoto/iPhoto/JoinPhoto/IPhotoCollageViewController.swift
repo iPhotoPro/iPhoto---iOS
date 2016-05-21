@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import ASValueTrackingSlider
 
 enum Action {
     case Layout
     case Padding
     case Radius
+    case Border
     case Color
 }
 
-var kPaddingDefault: Int = 10
+var kPaddingDefault: Float = 4
+var kRadiusDefault: Float = 0
+var kBorderDefault: Float = 0
 
 class IPhotoCollageViewController: UIViewController {
     
@@ -33,10 +37,13 @@ class IPhotoCollageViewController: UIViewController {
     private var layoutView: IPhotoCollageLayoutListView?
     private var paddingView: IPaddingSliderView?
     private var radiusView: IRadiusSliderView?
+    private var borderView: IBorderSliderView?
+    private var backgroundColorView: IBackgroundColor?
     
     @IBOutlet weak var layoutActionButton: UIButton!
     @IBOutlet weak var paddingActionButton: UIButton!
     @IBOutlet weak var radiusActionButton: UIButton!
+    @IBOutlet weak var borderActionButton: UIButton!
     @IBOutlet weak var colorActionButton: UIButton!
     
     override func viewDidLoad() {
@@ -114,8 +121,17 @@ class IPhotoCollageViewController: UIViewController {
             }
             view = radiusView
             break
+        case .Border:
+            if borderView == nil {
+                borderView = IBorderSliderView.loadFromNib()
+            }
+            view = borderView
+            break
         case .Color:
-            
+            if backgroundColorView == nil {
+                backgroundColorView = IBackgroundColor.loadFromNib()
+            }
+            view = backgroundColorView
             break
         }
         return view
@@ -128,11 +144,17 @@ class IPhotoCollageViewController: UIViewController {
                 (currentActionView as! IPhotoCollageLayoutListView).delegate = self
             } else if currentActionView.isKindOfClass(IPaddingSliderView) {
                 (currentActionView as! IPaddingSliderView).delegate = self
+            } else if currentActionView.isKindOfClass(IRadiusSliderView) {
+                (currentActionView as! IRadiusSliderView).delegate = self
+            } else if currentActionView.isKindOfClass(IBorderSliderView) {
+                (currentActionView as! IBorderSliderView).delegate = self
             }
+            currentActionView.alpha = 0.0
             photoCollageContainerView.addSubview(currentActionView)
-            UIView.animateWithDuration(kAnimation) {
-                currentActionView.alpha = 1.0
-            }
+            view.bringSubviewToFront(photoCollageContainerView)
+            UIView.beginAnimations(nil, context: nil)
+            currentActionView.alpha = 1.0
+            UIView.commitAnimations()
         }
     }
     
@@ -160,6 +182,11 @@ class IPhotoCollageViewController: UIViewController {
             radiusActionButton.setImage(UIImage(named: "collage-radius-select"), forState: .Normal)
         } else {
             radiusActionButton.setImage(UIImage(named: "collage-radius"), forState: .Normal)
+        }
+        if currentAction == .Border {
+            borderActionButton.setImage(UIImage(named: "collage-border-select"), forState: .Normal)
+        } else {
+            borderActionButton.setImage(UIImage(named: "collage-border"), forState: .Normal)
         }
         if currentAction == .Color {
             colorActionButton.setImage(UIImage(named: "collage-color-select"), forState: .Normal)
@@ -195,29 +222,71 @@ class IPhotoCollageViewController: UIViewController {
         }
     }
     
+    @IBAction func didTouchUpInsideBorderButton(sender: AnyObject) {
+        if currentAction != .Border {
+            removeActionView()
+            currentAction = .Border
+            addActionView()
+            updateActionButtonState()
+        }
+    }
+    
     @IBAction func didTouchUpInsideColorButton(sender: AnyObject) {
         if currentAction != .Color {
             removeActionView()
             currentAction = .Color
-            //
+            addActionView()
             updateActionButtonState()
         }
     }
     
 }
 
-extension IPhotoCollageViewController: IPhotoCollageLayoutListViewDelegate, IPaddingSliderViewDelegate {
+extension IPhotoCollageViewController: IPhotoCollageLayoutListViewDelegate, IPaddingSliderViewDelegate, IRadiusSliderViewDelegate, IBorderSliderViewDelegate {
     
     func didSelectItemAtIndexPath(indexPath: NSIndexPath) {
         if indexPath.row != currentLayoutIndex {
             currentLayoutIndex = indexPath.row
             prepareCollageMainLayout(indexPath)
             paddingView?.defaultSilder()
+            radiusView?.defaultSilder()
         }
     }
     
-    func didChangeValue(slider: IPSlider, value: Int) {
+    func didChangeValuePadding(slider: ASValueTrackingSlider, value: Float) {
         mainLayout.updatePadding(CGFloat(value))
+    }
+    
+    func didChangeValueRadius(slider: ASValueTrackingSlider, value: Float) {
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            kProcessRadiusImageViewNotificationName,
+            object: self,
+            userInfo: ["radius-value" : value]
+        )
+    }
+    
+    func didChangeValueBorder(slider: ASValueTrackingSlider, value: Float) {
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            kProcessBorderImageViewNotificationName,
+            object: self,
+            userInfo: ["border-value" : value]
+        )
+    }
+    
+    func didSelectedBorderColor(colorView: IBorderColor, color: UIColor) {
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            kProcessBorderColorNotificationName,
+            object: self,
+            userInfo: ["border-color" : color]
+        )
+    }
+    
+    func didSelectedBorderType(type: BorderOption) {
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            kProcessBorderTypeNotificationName,
+            object: self,
+            userInfo: ["border-type" : type.rawValue]
+        )
     }
     
 }

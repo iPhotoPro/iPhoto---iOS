@@ -11,67 +11,61 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-kH-PpG" customClass="IPSlider" customModule="iPhoto" customModuleProvider="target">
-                    <rect key="frame" x="30" y="25" width="260" height="40"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Id5-lc-83b"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="thumbTintColor">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="trackTintColor">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="spring-slider"/>
-                    </userDefinedRuntimeAttributes>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="74O-qm-C0L" customClass="ASValueTrackingSlider">
+                    <rect key="frame" x="35" y="18" width="243" height="31"/>
+                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="didChangeValue:" destination="iN0-l3-epB" eventType="valueChanged" id="Nxu-BW-fNu"/>
+                        <action selector="didChangeValue:" destination="iN0-l3-epB" eventType="valueChanged" id="Ntx-G2-3eo"/>
                     </connections>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2U-p5-uBd">
-                    <rect key="frame" x="30" y="8" width="16" height="12"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyO-L9-3pa">
+                    <rect key="frame" x="15" y="26" width="7" height="14"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgw-8h-nvR">
-                    <rect key="frame" x="152" y="8" width="16" height="12"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" red="1" green="0.60101209060000005" blue="0.0051698231230000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETP-sv-Q29">
-                    <rect key="frame" x="276" y="8" width="14" height="12"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJX-lY-gBT">
+                    <rect key="frame" x="291" y="26" width="14" height="14"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="m2U-kH-PpG" firstAttribute="top" secondItem="f2U-p5-uBd" secondAttribute="bottom" constant="5" id="9Ap-i9-gkY"/>
-                <constraint firstAttribute="bottom" secondItem="m2U-kH-PpG" secondAttribute="bottom" id="HZE-st-ao2"/>
-                <constraint firstItem="Lgw-8h-nvR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IHa-LG-DA2"/>
-                <constraint firstItem="m2U-kH-PpG" firstAttribute="top" secondItem="Lgw-8h-nvR" secondAttribute="bottom" constant="5" id="PhS-H8-8CQ"/>
-                <constraint firstItem="m2U-kH-PpG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="Qq4-yp-IeZ"/>
-                <constraint firstItem="ETP-sv-Q29" firstAttribute="trailing" secondItem="m2U-kH-PpG" secondAttribute="trailing" id="Vr5-70-c5W"/>
-                <constraint firstAttribute="trailing" secondItem="m2U-kH-PpG" secondAttribute="trailing" constant="30" id="fWv-EJ-pDV"/>
-                <constraint firstItem="m2U-kH-PpG" firstAttribute="top" secondItem="ETP-sv-Q29" secondAttribute="bottom" constant="5" id="m1Y-xW-weV"/>
-                <constraint firstItem="f2U-p5-uBd" firstAttribute="leading" secondItem="m2U-kH-PpG" secondAttribute="leading" id="qL4-s1-qaS"/>
+                <constraint firstItem="74O-qm-C0L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="8As-ah-lrk"/>
+                <constraint firstItem="xJX-lY-gBT" firstAttribute="centerY" secondItem="74O-qm-C0L" secondAttribute="centerY" id="FOi-OY-z93"/>
+                <constraint firstItem="xJX-lY-gBT" firstAttribute="leading" secondItem="74O-qm-C0L" secondAttribute="trailing" constant="15" id="L49-Mp-kq6"/>
+                <constraint firstItem="74O-qm-C0L" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Pru-Me-eHk"/>
+                <constraint firstAttribute="trailing" secondItem="xJX-lY-gBT" secondAttribute="trailing" constant="15" id="R43-2d-HYH"/>
+                <constraint firstAttribute="trailing" secondItem="74O-qm-C0L" secondAttribute="trailing" constant="30" id="SSd-Ki-Wjj"/>
+                <constraint firstItem="74O-qm-C0L" firstAttribute="leading" secondItem="VyO-L9-3pa" secondAttribute="trailing" constant="15" id="YXE-VQ-gcg"/>
+                <constraint firstAttribute="bottom" secondItem="74O-qm-C0L" secondAttribute="bottom" constant="17" id="Ye6-Za-d7c"/>
+                <constraint firstItem="VyO-L9-3pa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="bof-lm-B2J"/>
+                <constraint firstItem="VyO-L9-3pa" firstAttribute="centerY" secondItem="74O-qm-C0L" secondAttribute="centerY" id="f4G-8h-zzZ"/>
+                <constraint firstItem="xJX-lY-gBT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gHe-MF-dxw"/>
+                <constraint firstItem="VyO-L9-3pa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="h32-5G-m0c"/>
+                <constraint firstAttribute="bottom" secondItem="74O-qm-C0L" secondAttribute="bottom" constant="5" id="lL5-3F-to1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="h32-5G-m0c"/>
+                    <exclude reference="8As-ah-lrk"/>
+                    <exclude reference="Pru-Me-eHk"/>
+                    <exclude reference="SSd-Ki-Wjj"/>
+                    <exclude reference="lL5-3F-to1"/>
+                    <exclude reference="gHe-MF-dxw"/>
+                </mask>
+            </variation>
             <connections>
-                <outlet property="maxValueLabel" destination="ETP-sv-Q29" id="a3R-3n-oIc"/>
-                <outlet property="minValueLabel" destination="f2U-p5-uBd" id="PJK-vh-HIf"/>
-                <outlet property="slider" destination="m2U-kH-PpG" id="6rM-xT-KO1"/>
-                <outlet property="valueLabel" destination="Lgw-8h-nvR" id="QeJ-X6-VWT"/>
+                <outlet property="maxValueLabel" destination="xJX-lY-gBT" id="ovz-B4-AQ4"/>
+                <outlet property="minValueLabel" destination="VyO-L9-3pa" id="xYM-QV-5z2"/>
+                <outlet property="slider" destination="74O-qm-C0L" id="8Vb-6O-MOl"/>
             </connections>
             <point key="canvasLocation" x="287" y="492.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="spring-slider" width="33" height="33"/>
-    </resources>
 </document>
