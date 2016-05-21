@@ -47,6 +47,7 @@ class IPhotoCollageManager: NSObject {
             if let data = NSData(contentsOfFile: path) {
                 let json = JSON(data: data)
                 if let collages = json["collage"].array {
+                    photoCollages.layouts.removeAll(keepCapacity: false)
                     for layout in collages {
                         let newLayout = ILayout()
                         if let sections = layout["layout"].array {

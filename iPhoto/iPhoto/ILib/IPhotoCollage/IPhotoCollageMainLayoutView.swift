@@ -10,11 +10,11 @@ import UIKit
 
 class IPhotoCollageMainLayoutView: UIView {
     
-    let kPaddingDefault: CGFloat = 10.0
+    let kPaddingDefault: CGFloat = 5.0
 
     @IBOutlet weak var collectionView: UICollectionView!
     private var data: ILayout = ILayout()
-    private var padding: CGFloat = 10.0 {
+    private var padding: CGFloat = 5.0 {
         didSet {
             if let layout = collectionView.collectionViewLayout as? AJFCollectionViewWaterfallLayout {
                 layout.invalidateLayout()

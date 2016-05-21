@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IBorderColor" customModule="iPhoto" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA3-DI-xxh">
+                    <rect key="frame" x="275" y="13" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="AA3-DI-xxh" secondAttribute="height" multiplier="1:1" id="cZq-gz-hS6"/>
+                    </constraints>
+                    <state key="normal" image="collage-border-close"/>
+                    <connections>
+                        <action selector="dismissBorderColorView:" destination="iN0-l3-epB" eventType="touchUpInside" id="CA0-DW-IMi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBK-IE-eCH">
+                    <rect key="frame" x="0.0" y="13" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aBK-IE-eCH" secondAttribute="height" multiplier="8:5" id="Hhc-bR-a7B"/>
+                        <constraint firstAttribute="width" secondItem="aBK-IE-eCH" secondAttribute="height" multiplier="1:1" id="vPj-ZI-0uz"/>
+                    </constraints>
+                    <state key="normal" image="collage-border-more"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Hhc-bR-a7B"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="showMoreColor:" destination="iN0-l3-epB" eventType="touchUpInside" id="EYB-ft-YsF"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IIf-EY-bwx">
+                    <rect key="frame" x="50" y="10" width="215" height="45"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="tiJ-Jt-JJv">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="d8O-df-CJo"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="fkO-c7-rpc"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IIf-EY-bwx" firstAttribute="leading" secondItem="aBK-IE-eCH" secondAttribute="trailing" constant="10" id="5Yr-cZ-Dk3"/>
+                <constraint firstItem="IIf-EY-bwx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="7i5-VV-pgf"/>
+                <constraint firstItem="aBK-IE-eCH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Bmb-5i-qlh"/>
+                <constraint firstItem="AA3-DI-xxh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IhN-6H-Ejr"/>
+                <constraint firstAttribute="bottom" secondItem="IIf-EY-bwx" secondAttribute="bottom" constant="10" id="anZ-rQ-p9D"/>
+                <constraint firstItem="AA3-DI-xxh" firstAttribute="leading" secondItem="IIf-EY-bwx" secondAttribute="trailing" constant="10" id="fI3-Rd-8Yz"/>
+                <constraint firstItem="aBK-IE-eCH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fQD-cz-Sts"/>
+                <constraint firstAttribute="trailing" secondItem="AA3-DI-xxh" secondAttribute="trailing" constant="5" id="m7X-aR-Q2O"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="IIf-EY-bwx" id="HU0-s5-sOX"/>
+            </connections>
+            <point key="canvasLocation" x="1275" y="183.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="collage-border-close" width="40" height="40"/>
+        <image name="collage-border-more" width="40" height="40"/>
+    </resources>
+</document>

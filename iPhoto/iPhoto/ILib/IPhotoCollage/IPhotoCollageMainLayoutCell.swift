@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import QuartzCore
+
+let kProcessRadiusImageViewNotificationName = "ProcessRadiusImageViewNotification"
+let kProcessBorderImageViewNotificationName = "ProcessBorderImageViewNotification"
+let kProcessBorderColorNotificationName = "ProcessBorderColorNotificationName"
+let kProcessBorderTypeNotificationName = "ProcessBorderTypeNotificationName"
 
 class IPhotoCollageMainLayoutCell: UICollectionViewCell {
     
@@ -21,6 +27,12 @@ class IPhotoCollageMainLayoutCell: UICollectionViewCell {
     
     private var originPoint: CGPoint = CGPointZero
     private var previousScale: CGFloat = 1.0
+    private var previousRadius: CGFloat = 0.0
+    private var previousBorderWidth: CGFloat = 0.0
+    private var previousBorderColor: UIColor = UIColor.grayColor()
+    private var previousBorderType: Int = 0
+    
+    private var shapeLayer: CAShapeLayer!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,11 +53,38 @@ class IPhotoCollageMainLayoutCell: UICollectionViewCell {
         )
         addGestureRecognizer(pinchGesture)
          */
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(processRadiusImageView(_:)),
+            name: kProcessRadiusImageViewNotificationName,
+            object: nil
+        )
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(processBorderImageView(_:)),
+            name: kProcessBorderImageViewNotificationName,
+            object: nil
+        )
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(processBorderColor(_:)),
+            name: kProcessBorderColorNotificationName,
+            object: nil
+        )
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(processBorderType(_:)),
+            name: kProcessBorderTypeNotificationName,
+            object: nil
+        )
     }
     
     override func layoutSubviews() {
         imageView.bounds = bounds
         updatePositionImage()
+        updateRadius()
+        updateBorder()
     }
     
     //MARK: Move use UIPanGestureRecognizer
@@ -139,6 +178,80 @@ class IPhotoCollageMainLayoutCell: UICollectionViewCell {
         currentOrigin.x = currentOrigin.x * scale
         currentOrigin.y = currentOrigin.y * scale
         imageView.frame.origin = currentOrigin
+    }
+    
+    //MARK: Process corner radius
+    func processRadiusImageView(notification: NSNotification) {
+        let userInfo = notification.userInfo
+        if let radiusValue = userInfo, value = radiusValue["radius-value"] {
+            previousRadius = CGFloat(value.floatValue)
+            roundView(self, onCorner: .AllCorners, radius: previousRadius)
+        }
+    }
+    
+    private func updateRadius() {
+        roundView(self, onCorner: .AllCorners, radius: previousRadius)
+    }
+    
+    private func roundView(view: UIView, onCorner: UIRectCorner, radius: CGFloat) {
+        let radiusPath = UIBezierPath(
+            roundedRect: view.bounds,
+            byRoundingCorners: onCorner,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        if shapeLayer == nil {
+            shapeLayer = CAShapeLayer()
+        }
+        shapeLayer.frame = view.bounds
+        shapeLayer.path = radiusPath.CGPath
+        view.layer.mask = shapeLayer
+    }
+    
+    //MARK: Process border
+    func processBorderImageView(notification: NSNotification) {
+        let userInfo = notification.userInfo
+        if let radiusValue = userInfo, value = radiusValue["border-value"] {
+            previousBorderWidth = CGFloat(value.floatValue)
+            boderView(self, width: previousBorderWidth, color: previousBorderColor, type: previousBorderType)
+        }
+    }
+    
+    private func updateBorder() {
+        boderView(self, width: previousBorderWidth, color: previousBorderColor, type: previousBorderType)
+    }
+    
+    private func boderView(view: UIView, width: CGFloat, color: UIColor?, type: Int) {
+        view.layer.borderWidth = width
+        if let color = color {
+            view.layer.borderColor = color.CGColor
+        }
+        switch type {
+        case BorderOption.Normal.rawValue:
+            break
+        case BorderOption.Dash.rawValue:
+            
+            break
+        case BorderOption.Dot.rawValue:
+            break
+        default:
+            break
+        }
+    }
+    
+    func processBorderColor(notification: NSNotification) {
+        let userInfo = notification.userInfo
+        if let radiusValue = userInfo, color = radiusValue["border-color"] as? UIColor {
+            previousBorderColor = color
+            boderView(self, width: previousBorderWidth, color: previousBorderColor, type: previousBorderType)
+        }
+    }
+    
+    func processBorderType(notification: NSNotification) {
+        let userInfo = notification.userInfo
+        if let radiusValue = userInfo, type = radiusValue["border-type"] {
+            previousBorderType = type.integerValue
+            //Comming soon
+        }
     }
 
 }

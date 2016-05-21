@@ -105,28 +105,35 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7W-m5-dv7">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
                                         <state key="normal" image="collage-collage-select"/>
                                         <connections>
                                             <action selector="didTouchUpInsideLayoutButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="1s4-BD-0Pq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfX-Ww-aRv">
-                                        <rect key="frame" x="80" y="0.0" width="80" height="44"/>
+                                        <rect key="frame" x="64" y="0.0" width="64" height="44"/>
                                         <state key="normal" image="collage-padding"/>
                                         <connections>
                                             <action selector="didTouchUpInsidePaddingButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="OPS-QT-liv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Err-AK-Ktd">
-                                        <rect key="frame" x="160" y="0.0" width="80" height="44"/>
+                                        <rect key="frame" x="128" y="0.0" width="64" height="44"/>
                                         <state key="normal" image="collage-radius"/>
                                         <connections>
                                             <action selector="didTouchUpInsideRadiusButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="buT-JY-ywp"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-54-SZx">
-                                        <rect key="frame" x="240" y="0.0" width="80" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-qf-rXg">
+                                        <rect key="frame" x="192" y="0.0" width="64" height="44"/>
+                                        <state key="normal" image="collage-border"/>
+                                        <connections>
+                                            <action selector="didTouchUpInsideBorderButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="cwv-jm-4ev"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-54-SZx">
+                                        <rect key="frame" x="256" y="0.0" width="64" height="44"/>
                                         <state key="normal" image="collage-color"/>
                                         <connections>
                                             <action selector="didTouchUpInsideColorButton:" destination="cdU-AQ-bEX" eventType="touchUpInside" id="Lwe-Op-33B"/>
@@ -135,27 +142,32 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.086274509803921567" green="0.090196078431372548" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="F7W-m5-dv7" firstAttribute="leading" secondItem="ltH-6g-gTV" secondAttribute="leading" id="5NM-vX-cig"/>
-                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="7YQ-C7-gM5"/>
+                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="leading" secondItem="F7W-m5-dv7" secondAttribute="trailing" id="1bb-YR-14U"/>
+                                    <constraint firstAttribute="bottom" secondItem="F7W-m5-dv7" secondAttribute="bottom" id="226-GM-OdK"/>
+                                    <constraint firstItem="jfg-qf-rXg" firstAttribute="leading" secondItem="Err-AK-Ktd" secondAttribute="trailing" id="2Vk-IL-wgz"/>
+                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="5ef-IL-XOj"/>
                                     <constraint firstAttribute="width" secondItem="ltH-6g-gTV" secondAttribute="height" multiplier="80:11" id="8De-OG-Hry"/>
-                                    <constraint firstItem="jzG-54-SZx" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="BO6-Uy-F3H"/>
-                                    <constraint firstItem="jzG-54-SZx" firstAttribute="leading" secondItem="Err-AK-Ktd" secondAttribute="trailing" id="JRE-hG-Pgh"/>
-                                    <constraint firstAttribute="bottom" secondItem="hfX-Ww-aRv" secondAttribute="bottom" id="MaP-J9-3xO"/>
-                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="Qej-dU-W7l"/>
-                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="leading" secondItem="F7W-m5-dv7" secondAttribute="trailing" id="UF5-0K-Ocv"/>
+                                    <constraint firstItem="F7W-m5-dv7" firstAttribute="leading" secondItem="ltH-6g-gTV" secondAttribute="leading" id="8vs-Q4-hRX"/>
+                                    <constraint firstAttribute="trailing" secondItem="jzG-54-SZx" secondAttribute="trailing" id="Eb9-Zu-Dcf"/>
+                                    <constraint firstItem="jzG-54-SZx" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="Ifk-0n-j5R"/>
+                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="RHV-SF-FnY"/>
+                                    <constraint firstItem="jfg-qf-rXg" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="SC8-6g-YLA"/>
                                     <constraint firstAttribute="height" constant="44" id="V2g-wc-whK"/>
-                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="Y1X-12-Bqs"/>
-                                    <constraint firstItem="jzG-54-SZx" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="YJw-rh-ZGW"/>
-                                    <constraint firstAttribute="bottom" secondItem="jzG-54-SZx" secondAttribute="bottom" id="dgU-RK-F9D"/>
-                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="hsN-7c-smb"/>
-                                    <constraint firstAttribute="bottom" secondItem="Err-AK-Ktd" secondAttribute="bottom" id="jIi-Dr-dr0"/>
-                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="mnW-7d-MN6"/>
-                                    <constraint firstAttribute="bottom" secondItem="F7W-m5-dv7" secondAttribute="bottom" id="ndg-8d-f0O"/>
-                                    <constraint firstAttribute="trailing" secondItem="jzG-54-SZx" secondAttribute="trailing" id="pbj-zm-4s1"/>
-                                    <constraint firstItem="jzG-54-SZx" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="r7O-lb-16i"/>
-                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="tZb-YJ-02Q"/>
-                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="leading" secondItem="hfX-Ww-aRv" secondAttribute="trailing" id="tre-GW-rkm"/>
-                                    <constraint firstItem="F7W-m5-dv7" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="wwm-j8-vr7"/>
+                                    <constraint firstItem="F7W-m5-dv7" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="V3n-KR-Svo"/>
+                                    <constraint firstItem="jzG-54-SZx" firstAttribute="leading" secondItem="jfg-qf-rXg" secondAttribute="trailing" id="Wdr-rL-WG9"/>
+                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="Wpl-gZ-Oz6"/>
+                                    <constraint firstAttribute="bottom" secondItem="jfg-qf-rXg" secondAttribute="bottom" id="XeL-NM-gdQ"/>
+                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="XiD-Pv-enl"/>
+                                    <constraint firstItem="hfX-Ww-aRv" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="Ze6-Gl-EKi"/>
+                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="dOu-A4-YRM"/>
+                                    <constraint firstAttribute="bottom" secondItem="hfX-Ww-aRv" secondAttribute="bottom" id="dsQ-Qp-61p"/>
+                                    <constraint firstItem="jzG-54-SZx" firstAttribute="width" secondItem="F7W-m5-dv7" secondAttribute="width" id="fgQ-yq-v3Y"/>
+                                    <constraint firstItem="jfg-qf-rXg" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="hRe-P1-Anv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Err-AK-Ktd" secondAttribute="bottom" id="kwC-6a-Zul"/>
+                                    <constraint firstItem="Err-AK-Ktd" firstAttribute="leading" secondItem="hfX-Ww-aRv" secondAttribute="trailing" id="osw-rZ-z61"/>
+                                    <constraint firstAttribute="bottom" secondItem="jzG-54-SZx" secondAttribute="bottom" id="ot7-VK-qWg"/>
+                                    <constraint firstItem="jfg-qf-rXg" firstAttribute="height" secondItem="F7W-m5-dv7" secondAttribute="height" id="ruD-Fe-y4M"/>
+                                    <constraint firstItem="jzG-54-SZx" firstAttribute="top" secondItem="ltH-6g-gTV" secondAttribute="top" id="uev-cx-2fp"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -272,6 +284,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="borderActionButton" destination="jfg-qf-rXg" id="GM3-ji-bCs"/>
                         <outlet property="collageContainerView" destination="Rjr-Rf-spt" id="DJI-yV-Bbt"/>
                         <outlet property="colorActionButton" destination="jzG-54-SZx" id="GB0-La-ttv"/>
                         <outlet property="layoutActionButton" destination="F7W-m5-dv7" id="R0j-SM-0VS"/>
@@ -364,12 +377,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="collage-collage-select" width="80" height="44"/>
-        <image name="collage-color" width="80" height="44"/>
+        <image name="collage-border" width="64" height="44"/>
+        <image name="collage-collage-select" width="64" height="44"/>
+        <image name="collage-color" width="64" height="44"/>
         <image name="collage-done" width="44" height="44"/>
         <image name="collage-home" width="44" height="44"/>
         <image name="collage-info" width="44" height="44"/>
-        <image name="collage-padding" width="80" height="44"/>
-        <image name="collage-radius" width="80" height="44"/>
+        <image name="collage-padding" width="64" height="44"/>
+        <image name="collage-radius" width="64" height="44"/>
     </resources>
 </document>
